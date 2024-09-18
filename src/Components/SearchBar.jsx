@@ -7,23 +7,21 @@ const SearchBar = () => {
 
     const handleSearch = (event) => {
         event.preventDefault();
-
     };
 
     return (
-            <div className="searchBarComplet">
-        <form onSubmit={handleSearch}>
-
+        <form onSubmit={handleSearch} className="searchBarInput">
             <input
                 className="searchBar"
                 type="text"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 placeholder="Recherche..."
-                />
-            <button type="submit" className="buttonSearch"><img src={Loupe} alt="Loupe" className="loupe" /></button>
+            />
+            <button type="submit" className="buttonSearch">
+                <img src={Loupe} alt="Loupe" className="loupe" />
+            </button>
         </form>
-                </div>
     );
 };
 
