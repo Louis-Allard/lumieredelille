@@ -24,4 +24,9 @@ Le site sera développé en ReactJS pour le frontend et en PHP pour le backend
   ## Github
 
 * Les messages git devront être écrits en **anglais*, commencer par une majuscule et terminer par un point.
+
+## Documentation
+
+* Le code devra être commenté
+* Les informations à savoir pourront être placé dans un fichier MD, donc le nom devra être écrit en **majuscule**.
     
