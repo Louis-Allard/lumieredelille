@@ -1,9 +1,13 @@
 import React from "react";
+import Header from "../Components/Header";
 
 const VosAvis=()=>{
     return(
+        <div>
+        <Header/>
 
-        <h1>Nos autrices/Auteurs</h1>
+        <h1>Vos avis</h1>
+        </div>
     )
 
 };

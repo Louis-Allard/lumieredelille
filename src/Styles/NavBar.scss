@@ -10,6 +10,11 @@
     margin-top: 18%;
 }
 
+.buttonNavBar a {
+    color: white;
+    text-decoration: none; /* Retirer le soulignement */
+}
+
 .buttonNavBar:hover{
     background-color: #a9a7ae;
     color: #0E2B46;
