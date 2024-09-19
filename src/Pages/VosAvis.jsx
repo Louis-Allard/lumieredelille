@@ -3,7 +3,7 @@ import Header from "../Components/Header";
 
 const VosAvis=()=>{
     return(
-        <div>
+        <div class="content">
         <Header/>
 
         <h1>Vos avis</h1>

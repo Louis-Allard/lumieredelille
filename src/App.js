@@ -4,6 +4,8 @@ import Home from "./Pages/Home";
 import NosAutricesAuteurs from "./Pages/NosAutricesAuteurs";
 import VosAvis from "./Pages/VosAvis";
 import Contact from "./Pages/Contact";
+import Footer from "./Components/Footer";
+import "./App.css";
 
 const App = () => {
     return (
@@ -16,6 +18,7 @@ const App = () => {
             <Route path="/contact" element={<Contact/>}/>
           </Routes>
         </Router>
+        <Footer/>
       </div>
     );
 };

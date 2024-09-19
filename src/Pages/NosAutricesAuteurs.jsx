@@ -3,7 +3,7 @@ import Header from "../Components/Header";
 
 const AutricesAuteurs=()=>{
     return(
-        <div>
+        <div class="content">
 
         <Header/>
         <h1>Nos autrices/Auteurs</h1>
