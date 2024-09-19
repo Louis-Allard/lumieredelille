@@ -1,12 +1,11 @@
 import React from 'react';
-import Header from '../Components/Header';
+import "../Styles/Home.scss";
 
 const Home = () => {
   return (
     <div class="content">
-      <Header/>
-      <p>Le petit éditeur lillois qui a de la bouteille</p>
-</div>
+      <p className='textPresentation'>Le petit éditeur lillois qui a de la bouteille</p>
+    </div>
   );
 };
 

@@ -6,11 +6,13 @@ import VosAvis from "./Pages/VosAvis";
 import Contact from "./Pages/Contact";
 import Footer from "./Components/Footer";
 import "./App.css";
+import Header from "./Components/Header";
 
 const App = () => {
     return (
       <div>
         <Router>
+        <Header/>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/nos_autrices_auteurs" element={<NosAutricesAuteurs />} />
