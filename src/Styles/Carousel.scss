@@ -1,0 +1,38 @@
+.carousel {
+    width: 80%;
+    margin: auto;
+  }
+  
+  .carousel img {
+    width: 80%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-left: 7%;
+    margin-bottom: 10%;
+  }
+  
+  /* Styles des dots (points) */
+  .slick-dots {
+    bottom: -25px; 
+  }
+  
+  .slick-dots li {
+    width: 30px; 
+    height: 30px;
+    margin: 0 25px;
+  }
+  
+  .slick-dots li button {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: #9C9FA6;
+  }
+  
+  .slick-dots li.slick-active button {
+    background-color: #0B4EDE;
+    border: solid white 2px;
+      
+  }
+  

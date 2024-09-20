@@ -5,17 +5,17 @@ import "../Styles/NavBar.scss";
 const Navbar = () => {
     return (
         <nav className="navBar">
-            <button className="buttonNavBar">
-                <Link to="/nos_autrices_auteurs">Nos Autrices/Auteurs</Link>
-            </button>
+            <Link to="/nos_autrices_auteurs" className="buttonNavBar">
+            <button className="buttonNavBar">Nos Autrices/Auteurs</button>
+            </Link>
 
-            <button className="buttonNavBar">
-                <Link to="/vos_avis">Vos Avis</Link>
-            </button>
+            <Link to="/vos_avis"className="buttonNavBar">
+            <button className="buttonNavBar">Vos Avis</button>
+            </Link>
 
-            <button className="buttonNavBar">
-                <Link to="/contact" >Contact</Link>
-            </button>
+            <Link to="/contact" className="buttonNavBar">
+            <button className="buttonNavBar">Contact</button>
+            </Link>
         </nav>
     );
 };

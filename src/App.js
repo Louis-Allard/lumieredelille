@@ -7,21 +7,27 @@ import Contact from "./Pages/Contact";
 import Footer from "./Components/Footer";
 import "./App.css";
 import Header from "./Components/Header";
+import CGV from "./Pages/CGV";
+import MentionsLegales from "./Pages/MentionsLegales";
+import QuiSommesNous from "./Pages/QuiSommesNous";
 
 const App = () => {
     return (
-      <div>
-        <Router>
-        <Header/>
+      <Router>
+        <div>
+          <Header/>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/nos_autrices_auteurs" element={<NosAutricesAuteurs />} />
             <Route path="/vos_avis" element={<VosAvis/>}/>
             <Route path="/contact" element={<Contact/>}/>
+            <Route path="/CGV" element={<CGV/>}/>
+            <Route path="/mentions_legales" element={<MentionsLegales/>}/>
+            <Route path="/qui_sommes_nous?" element={<QuiSommesNous/>}/>
           </Routes>
-        </Router>
-        <Footer/>
-      </div>
+          <Footer/>
+        </div>
+      </Router>
     );
 };
 
