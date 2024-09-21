@@ -1,12 +1,18 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Slider from "react-slick";
-import "../Styles/Carousel.scss"; 
-import Image1 from "../Assets/Livre1.jpg";
-import Image2 from "../Assets/Livre2.jpg";
-import Image3 from "../Assets/Livre5.jpg";
-import Image4 from "../Assets/Livre6.jpg";
+import "../Styles/Carousel.scss";
 
 const Carousel = () => {
+    const [livres, setLivres] = useState([]);
+
+    useEffect(() => {
+        // Appel de l'API pour récupérer les livres
+        fetch('http://localhost/Editeur/Api.php') // URL de l'API PHP
+            .then(response => response.json())
+            .then(data => setLivres(data))
+            .catch(error => console.error('Erreur:', error));
+    }, []);
+
     const settings = {
         dots: true, 
         infinite: true,
@@ -38,19 +44,21 @@ const Carousel = () => {
             },
         ],
     };
-    
-    const images = [
-        Image1, Image2, Image3, Image4,
-    ];
 
     return (
         <div className="carousel">
             <Slider {...settings}>
-                {images.map((image, index) => (
-                    <div key={index}>
-                        <img src={image} alt={`Image ${index + 1}`} />
-                    </div>
-                ))}
+                {livres.length > 0 ? (
+                    livres.map((livre, index) => (
+                        <div key={index}>
+                            <img src={`http://localhost/Editeur/${livre.image_url}`} alt={livre.titre} />
+                            <h3>{livre.titre}</h3>
+                            <p>{livre.auteur}</p>
+                        </div>
+                    ))
+                ) : (
+                    <p>Chargement des livres...</p>
+                )}
             </Slider>
         </div>
     );
