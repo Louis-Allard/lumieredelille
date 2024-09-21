@@ -10,6 +10,7 @@ import Header from "./Components/Header";
 import CGV from "./Pages/CGV";
 import MentionsLegales from "./Pages/MentionsLegales";
 import QuiSommesNous from "./Pages/QuiSommesNous";
+import DetailLivre from "./Pages/DetailLivre";
 
 const App = () => {
     return (
@@ -24,7 +25,8 @@ const App = () => {
             <Route path="/CGV" element={<CGV/>}/>
             <Route path="/mentions_legales" element={<MentionsLegales/>}/>
             <Route path="/qui_sommes_nous?" element={<QuiSommesNous/>}/>
-          </Routes>
+            <Route path="/detail_livre/:id" element={<DetailLivre />} />
+            </Routes>
           <Footer/>
         </div>
       </Router>
