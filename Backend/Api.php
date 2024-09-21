@@ -1,4 +1,9 @@
 <?php
+
+header("Access-Control-Allow-Origin: *"); // Permet toutes les origines
+header("Access-Control-Allow-Methods: GET, POST, OPTIONS"); // Méthodes HTTP autorisées
+header("Access-Control-Allow-Headers: Content-Type, Authorization"); // En-têtes autorisés
+
 header('Content-Type: application/json');
 
 $host = 'localhost';
