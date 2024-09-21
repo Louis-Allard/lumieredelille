@@ -43,12 +43,16 @@ const DetailLivre = () => {
         <div className="content">
             {livre ? (
                 <>
+                <div className="cardLivre">
+                    <img src={`http://localhost/Editeur/${livre.image_url}`} alt={livre.titre} className="imageLivre" />
+                    <div className="infoLivre">
                     <h1>{livre.titre}</h1>
                     <p><strong>Auteur :</strong> {livre.auteur}</p>
                     <p><strong>ISBN :</strong> {livre.isbn}</p>
                     <p><strong>Prix :</strong> {livre.prix} €</p>
-                    <p><strong>Frais de port :</strong> {livre.frais_port} €</p>
-                    <img src={`http://localhost/Editeur/${livre.image_url}`} alt={livre.titre} />
+                    {/* <p><strong>Frais de port :</strong> {livre.frais_port} €</p> */}
+                    </div>
+                </div>
                 </>
             ) : (
                 <p>Impossible de trouver les détails de ce livre.</p>

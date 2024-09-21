@@ -8,10 +8,13 @@ const Carousel = () => {
 
     useEffect(() => {
         fetch('http://localhost/Editeur/Api.php')
-            .then(response => response.json())
-            .then(data => setLivres(data))
-            .catch(error => console.error('Erreur:', error));
-    }, []);
+        .then(response => response.json())
+        .then(data => {
+            console.log("Données des livres reçues:", data);
+            setLivres(data);
+        })
+        .catch(error => console.error('Erreur:', error));
+}, []);
 
     const settings = {
         dots: true,
