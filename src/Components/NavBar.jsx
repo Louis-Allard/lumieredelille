@@ -3,38 +3,38 @@ import { Link } from "react-router-dom";
 import "../Styles/NavBar.scss";
 
 const Navbar = () => {
-    // État pour gérer l'ouverture/fermeture du menu sur les petits écrans
     const [isOpen, setIsOpen] = useState(false);
 
-    // Fonction pour basculer l'état du menu
     const toggleMenu = () => {
         setIsOpen(!isOpen);
     };
 
     return (
         <nav className="navBar">
-            {/* Logo ou autre contenu en haut si besoin */}
-            
-            {/* Bouton burger visible sur petits écrans */}
             <div className={`burger ${isOpen ? "open" : ""}`} onClick={toggleMenu}>
                 <span className="bar"></span>
                 <span className="bar"></span>
                 <span className="bar"></span>
             </div>
-
-            {/* Menu de navigation, affiché ou caché en fonction de l'état */}
-            <div className={`navLinks ${isOpen ? "open" : ""}`}>
+            
+            {/* Menu de navigation pour les grands écrans */}
+            <div className="navLinks">
                 <Link to="/nos_autrices_auteurs" className="buttonNavBar">
                     <button className="buttonNavBar">Nos Autrices/Auteurs</button>
                 </Link>
-
                 <Link to="/vos_avis" className="buttonNavBar">
                     <button className="buttonNavBar">Vos Avis</button>
                 </Link>
-
                 <Link to="/contact" className="buttonNavBar">
                     <button className="buttonNavBar">Contact</button>
                 </Link>
+            </div>
+
+            {/* Menu de navigation pour les petits écrans */}
+            <div className={`navLinksMobile ${isOpen ? "open" : ""}`}>
+                <Link to="/nos_autrices_auteurs" className="navItem">Nos Autrices/Auteurs</Link>
+                <Link to="/vos_avis" className="navItem">Vos Avis</Link>
+                <Link to="/contact" className="navItem">Contact</Link>
             </div>
         </nav>
     );
