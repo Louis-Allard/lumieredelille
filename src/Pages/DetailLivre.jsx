@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "../Styles/DetailLivre.scss";
+import LogoPanier2 from "../Assets/panierBlanc.png";
+
 
 const DetailLivre = () => {
     const { id } = useParams(); // Récupère l'ID du livre depuis l'URL
@@ -51,7 +53,7 @@ const DetailLivre = () => {
 
                         <h2 className="titreCardLivre"><strong>Titre :</strong> {livre.titre}</h2>
 
-                        <p className="textCardLivre"><strong>Auteur :</strong> {livre.auteur}</p>
+                        <p className="auteurCardLivre"><strong>Auteur :</strong> {livre.auteur}</p>
 
                             <div className="detailtechnicLivre">
                                 <p className="textCardLivre"><strong>ISBN :</strong> {livre.isbn}</p>
@@ -76,7 +78,10 @@ const DetailLivre = () => {
                         </div>
 
                         <p className="descriptCardLivre"><strong>Description :</strong>{livre.descriptif}</p>
-
+                        <button className="buttonPanier">
+                            <img src={LogoPanier2} alt="Panier" className="iconPanier" />
+                            Ajouter au panier
+                        </button>
                     </div>
                 </div>
                 </>

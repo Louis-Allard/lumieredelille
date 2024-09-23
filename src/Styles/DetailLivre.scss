@@ -1,7 +1,7 @@
 .imageLivre{
-    width: 40%;
+    height: 30rem;
+    width: 25rem;
     margin-right: 5%;
-
 }
 
 .cardLivre{
@@ -11,7 +11,7 @@
     
 }
 
-.textCardLivre {
+.textCardLivre, .auteurCardLivre {
     font-family: 'Roboto', sans-serif;
     color: #0E2B46 ;
     margin-right: 30%;
@@ -101,6 +101,136 @@
     font-weight: bold;
 }
 
+.buttonPanier {
+    display: flex;
+    align-items: center;
+    background-color: #6F5F96;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bolder;
+    border-radius: 25px;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    margin-left: 50%;
+    margin-top: 10%;
+}
+
+.buttonPanier img {
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+}
+
+.buttonPanier:hover {
+    background-color: #a9a7ae;
+    color: #0E2B46;
+}
+
+
+@media (max-width: 768px) {
+    .cardLivre {
+        flex-direction: column;
+    }
+
+    .imageLivre {
+        width: 18.5rem;
+    }
+
+    .infoLivre {
+        width: 60%; 
+    }
+
+    .textCardLivre {
+        font-family: 'Roboto', sans-serif;
+        color: #0E2B46 ;
+        margin-right: 30%;
+        width: 18.5rem;
+        text-align: center;
+    }
+
+    .auteurCardLivre{
+        font-family: 'Roboto', sans-serif;
+        color: #0E2B46 ;
+        margin-right: 30%;
+        width: 18.5rem;
+        text-align: center;
+        margin-top: -5%;
+    
+    }
+    
+    .descriptCardLivre{
+        font-family: 'Roboto', sans-serif;
+        color: #0E2B46 ;
+        margin-right: 30%;
+        font-size: 1.2rem;
+        width: 18.5rem;
+        text-align: center;
+        margin-top: -5%;
+    }
+    
+    .titreCardLivre {
+        font-family: 'Roboto', sans-serif;
+        color: #0E2B46 ;
+        margin-top: 0;
+        font-size: 1.5rem;
+        margin-top: 5%;
+    }
+    
+    .infoLivre{
+        margin-top: 0.2%;
+        width: 18.5rem;
+        text-align: center;
+    }
+    
+    .detailtechnicLivre{
+        margin-top: 12%;
+        line-height: 30%;
+    }
+    
+    .prixCardLivre{
+        font-family: 'Roboto', sans-serif;
+        color: #0E2B46 ;
+        font-weight: bold;
+        font-size: 2rem;
+        display: flex;
+    }
+    
+    
+    .prixCardLivre {
+        font-family: 'Roboto', sans-serif;
+        color: #0E2B46;
+        font-weight: bold;
+        font-size: 2rem;
+        margin-right: 10px;
+    }
+    
+    .prixStockContainer {
+        display: flex;
+        align-items: center;
+        justify-content:flex-start;
+        padding-left: 15%;
+        margin-top: -8%;
+    }
+
+    .buttonPanier {
+        display: flex;
+        align-items: center;
+        background-color: #6F5F96;
+        color: white;
+        font-family: 'Roboto', sans-serif;
+        font-weight: bolder;
+        border-radius: 25px;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        margin-left: 20%;
+        margin-top: 5%;
+        margin-bottom: 5%;
+    }
+    
+     
+}
 
 
 
