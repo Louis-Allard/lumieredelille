@@ -30,11 +30,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['image'])) {
         $isbn = $_POST['isbn'];
         $prix = $_POST['prix'];
         $frais_port = $_POST['frais_port'];
+        $date_publication = $_POST['date_publication']; // Nouvelle colonne
+        $format = $_POST['format']; // Nouvelle colonne
+        $nombre_pages = $_POST['nombre_pages']; // Nouvelle colonne
+        $descriptif = $_POST['descriptif']; // Nouvelle colonne
+        $stock = isset($_POST['stock']) ? 1 : 0; // Nouvelle colonne, 1 pour vrai, 0 pour faux
         $imageUrl = $targetFile;  // Chemin relatif vers l'image
 
-        // Requête SQL pour insérer les détails du livre avec une requête préparée pour éviter les injections SQL
-        $sql = "INSERT INTO livres (titre, auteur, isbn, prix, frais_port, image_url) 
-                VALUES (:titre, :auteur, :isbn, :prix, :frais_port, :image_url)";
+        // Requête SQL pour insérer les détails du livre
+        $sql = "INSERT INTO livres (titre, auteur, isbn, prix, frais_port, image_url, date_publication, format, nombre_pages, descriptif, stock) 
+                VALUES (:titre, :auteur, :isbn, :prix, :frais_port, :image_url, :date_publication, :format, :nombre_pages, :descriptif, :stock)";
         
         // Préparation de la requête
         $stmt = $connexion->prepare($sql);
@@ -46,6 +51,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['image'])) {
         $stmt->bindParam(':prix', $prix);
         $stmt->bindParam(':frais_port', $frais_port);
         $stmt->bindParam(':image_url', $imageUrl);
+        $stmt->bindParam(':date_publication', $date_publication);
+        $stmt->bindParam(':format', $format);
+        $stmt->bindParam(':nombre_pages', $nombre_pages);
+        $stmt->bindParam(':descriptif', $descriptif);
+        $stmt->bindParam(':stock', $stock);
         
         // Exécution de la requête
         if ($stmt->execute()) {
@@ -65,6 +75,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['image'])) {
     ISBN : <input type="text" name="isbn" required><br>
     Prix : <input type="text" name="prix" required><br>
     Frais de port : <input type="text" name="frais_port" required><br>
+    Date de publication : <input type="date" name="date_publication" required><br>
+    Format : <input type="text" name="format" required placeholder="ex: 140 x 210"><br>
+    Nombre de pages : <input type="number" name="nombre_pages" required><br>
+    Descriptif : <textarea name="descriptif" required></textarea><br>
+    En stock : <input type="checkbox" name="stock"><br>
     Image : <input type="file" name="image" required><br>
     <input type="submit" value="Ajouter le livre">
 </form>
