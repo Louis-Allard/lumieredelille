@@ -1,12 +1,106 @@
 .imageLivre{
-    width: 20%;
-    height: 20%;
-    margin-right: 2%;
+    width: 40%;
+    margin-right: 5%;
 
 }
 
 .cardLivre{
     display: flex;
     margin-top: 5%;
-    margin-left: 5%;
+    margin-left: 10%;
+    
 }
+
+.textCardLivre {
+    font-family: 'Roboto', sans-serif;
+    color: #0E2B46 ;
+    margin-right: 30%;
+}
+
+.descriptCardLivre{
+    font-family: 'Roboto', sans-serif;
+    color: #0E2B46 ;
+    margin-right: 30%;
+    font-size: 1.2rem;
+
+}
+
+.titreCardLivre {
+    font-family: 'Roboto', sans-serif;
+    color: #0E2B46 ;
+    margin-top: 0;
+    font-size: 1.5rem;
+}
+
+.infoLivre{
+    margin-top: 0.2%;
+}
+
+.detailtechnicLivre{
+    margin-top: 5%;
+    line-height: 30%;
+}
+
+.prixCardLivre{
+    font-family: 'Roboto', sans-serif;
+    color: #0E2B46 ;
+    font-weight: bold;
+    font-size: 2rem;
+    display: flex;
+}
+
+.prixStockContainer {
+    align-items: center;
+    margin-top: 20px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.prixCardLivre {
+    font-family: 'Roboto', sans-serif;
+    color: #0E2B46;
+    font-weight: bold;
+    font-size: 2rem;
+    margin-right: 10px;
+}
+
+.prixStockContainer {
+    display: flex;
+    align-items: center;
+    justify-content:flex-start;
+}
+
+.stockStatus {
+    display: flex;
+    align-items: center;
+}
+
+.stockCircle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: rgb(27, 230, 27);
+    border: solid white 1px;
+    margin-right: 5px;
+}
+
+
+.stockCircle.red { 
+    background-color: red;
+}
+
+.enStockText {
+    font-family: 'Roboto', sans-serif;
+    color: #0E2B46;
+    font-weight: bold;
+}
+
+.outOfStockText {
+    font-family: 'Roboto', sans-serif;
+    color: #0E2B46;
+    font-weight: bold;
+}
+
+
+
+

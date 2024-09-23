@@ -5,7 +5,7 @@ html, body {
 }
 
 .content {
-  position: relative; /* Nécessaire pour le positionnement du pseudo-élément */
+  position: relative;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -24,7 +24,7 @@ html, body {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(167, 166, 166, 0.6); 
+  background-color: rgba(167, 198, 232, 0.8);
   z-index: 1; 
 }
 

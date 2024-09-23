@@ -25,7 +25,7 @@ const DetailLivre = () => {
             }
         };
 
-        fetchLivreDetails(); // Appelle la fonction lors du chargement du composant
+        fetchLivreDetails(); // Appel la fonction lors du chargement du composant
     }, [id]);
 
     // Affichage lors du chargement
@@ -44,13 +44,39 @@ const DetailLivre = () => {
             {livre ? (
                 <>
                 <div className="cardLivre">
+
                     <img src={`http://localhost/Editeur/${livre.image_url}`} alt={livre.titre} className="imageLivre" />
+
                     <div className="infoLivre">
-                    <h1>{livre.titre}</h1>
-                    <p><strong>Auteur :</strong> {livre.auteur}</p>
-                    <p><strong>ISBN :</strong> {livre.isbn}</p>
-                    <p><strong>Prix :</strong> {livre.prix} €</p>
-                    {/* <p><strong>Frais de port :</strong> {livre.frais_port} €</p> */}
+
+                        <h2 className="titreCardLivre"><strong>Titre :</strong> {livre.titre}</h2>
+
+                        <p className="textCardLivre"><strong>Auteur :</strong> {livre.auteur}</p>
+
+                            <div className="detailtechnicLivre">
+                                <p className="textCardLivre"><strong>ISBN :</strong> {livre.isbn}</p>
+                                <p className="textCardLivre"><strong>Date de publication :</strong> {livre.date_publication}</p>
+                                <p className="textCardLivre"><strong>Format :</strong> {livre.format}</p>
+                                <p className="textCardLivre"><strong>Nombre de pages :</strong> {livre.nombre_pages}</p>
+                            </div>
+
+                        <div className="prixStockContainer">
+                            <p className="prixCardLivre">{livre.prix} €</p>
+                            {livre.stock ? (
+                                <div className="stockStatus">
+                                    <span className="stockCircle"></span>
+                                    <span className="enStockText">En stock</span>
+                                </div>
+                            ) : (
+                                <div className="stockStatus">
+                                    <span className="stockCircle red"></span>
+                                    <span className="outOfStockText">Rupture de stock</span>
+                                </div>
+                            )}
+                        </div>
+
+                        <p className="descriptCardLivre"><strong>Description :</strong>{livre.descriptif}</p>
+
                     </div>
                 </div>
                 </>
