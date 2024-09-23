@@ -11,3 +11,33 @@
 .panierGroup{
     margin-left: 89%;
 }
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 0;
+    }
+
+    .logoLLDL {
+        width: 80%;
+        margin-top: 0;
+    }
+
+    /* Réorganiser la barre de navigation et la barre de recherche */
+
+    .navBar {
+        width: 90%;
+    }
+
+    .searchBar {
+        width: 80%;
+    }
+
+    .panierGroup {
+        margin-left: 60%;
+        justify-content: center;
+    }
+
+}

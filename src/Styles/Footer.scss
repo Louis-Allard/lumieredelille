@@ -47,3 +47,22 @@
 .footerText a:hover{
   color: white;
 }
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .footerComplet {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+  .footerText {
+      text-align: center;
+      margin-bottom: 20px;
+  }
+
+  .iconeReseaux {
+      justify-content: center;
+      margin: 0;
+  }
+}
