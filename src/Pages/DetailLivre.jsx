@@ -77,7 +77,7 @@ const DetailLivre = () => {
                             )}
                         </div>
 
-                        <p className="descriptCardLivre"><strong>Description :</strong>{livre.descriptif}</p>
+                        <p className="descriptCardLivre"><strong>Description : </strong>{livre.descriptif}</p>
                         <button className="buttonPanier">
                             <img src={LogoPanier2} alt="Panier" className="iconPanier" />
                             Ajouter au panier
