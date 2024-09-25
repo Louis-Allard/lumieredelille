@@ -11,6 +11,7 @@ import CGV from "./Pages/CGV";
 import MentionsLegales from "./Pages/MentionsLegales";
 import QuiSommesNous from "./Pages/QuiSommesNous";
 import DetailLivre from "./Pages/DetailLivre";
+import Actualites from "./Pages/Actualites";
 
 const App = () => {
     return (
@@ -26,6 +27,7 @@ const App = () => {
             <Route path="/mentions_legales" element={<MentionsLegales/>}/>
             <Route path="/qui_sommes_nous?" element={<QuiSommesNous/>}/>
             <Route path="/detail_livre/:id" element={<DetailLivre />} />
+            <Route path="/actualites" element={<Actualites/>}/>
             </Routes>
           <Footer/>
         </div>
