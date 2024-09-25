@@ -15,6 +15,8 @@ const Contact=()=>{
 
         <Formulaire/>
 
+        <p>Si vous souhaitez envoyer votre tapuscrit, merci de me l’adresser par mail ou par courrier.</p>
+
         <p>Coordonnées :
 Adresse :Les Lumières de Lille3 avenue Poincaré, 59700 Marcq-en-Barœul, France
 Email : frederic@leslumieresdelille.com
