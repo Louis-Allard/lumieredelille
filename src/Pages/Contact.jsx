@@ -17,7 +17,7 @@ const Contact=()=>{
 
         <p>Coordonnées :
 Adresse :Les Lumières de Lille3 avenue Poincaré, 59700 Marcq-en-Barœul, France
-Email : contact@lumieresdelille.fr
+Email : frederic@leslumieresdelille.com
 Téléphone : +33 (0)3 XX XX XX XX</p>
 
     </div>
