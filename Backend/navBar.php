@@ -41,7 +41,7 @@
     <nav>
         <button ><a href="listeLivres.php">Liste des livres</a></button>
         <button ><a href="upload.php">Ajouter des livres</a></button>
-        <button ><a href="connexion_admin.php">Déconnexion</a></button>
+        <button ><a href="logout.php">Déconnexion</a></button>
     </nav>
 </div>
 
