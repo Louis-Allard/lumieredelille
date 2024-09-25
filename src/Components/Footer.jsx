@@ -2,6 +2,7 @@ import React from "react";
 import "../Styles/Footer.scss";
 import Instagram from "../Assets/instagram.png";
 import Facebook from "../Assets/logo-de-lapplication-facebook.png";
+import LogoX from "../Assets/twitter.png";
 import Email from "../Assets/courrier.png";
 import { Link } from "react-router-dom";
 
@@ -19,6 +20,7 @@ const Footer = () => {
                 <div className="iconeReseaux">
                     <img src={Instagram} alt="Instagram" className="icon" />
                     <img src={Facebook} alt="Facebook" className="icon" />
+                    <img src={LogoX} alt="LogoX" className="icon" />
                     <img src={Email} alt="Email" className="icon3" />
                 </div>
             </div>
