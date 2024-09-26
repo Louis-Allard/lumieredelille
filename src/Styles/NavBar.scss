@@ -1,3 +1,10 @@
+.navBar{
+    margin-left: 13%;
+    position: relative;
+    z-index: 1000;
+}
+
+
 .buttonNavBar{
     background-color: #6F5F96;
     border-radius: 25px;
@@ -7,7 +14,7 @@
     width: 159px;
     height: 45px;
     margin-right: 53px;
-    margin-top: 18%;
+    margin-top: 10%;
 }
 
 .buttonNavBar a {
@@ -24,16 +31,6 @@
     margin-right: 0;
 }
 
-.navBar{
-    margin-left: 13%;
-    position: relative;
-    z-index: 1000;
-}
-
-.navLinks{
-    margin-bottom: 14%;
-}
-
 
 .burger {
     cursor: pointer;
@@ -43,7 +40,7 @@
     width: 30px;
     height: 21px;
     position: relative;
-    z-index: 1001; /* Assurez-vous que le burger est au-dessus du menu */
+    z-index: 1001;
 }
 
 
@@ -89,7 +86,6 @@
   }
 
 
-
   
 /* Masquer le menu sur les petits écrans */
 @media (max-width: 768px) {
@@ -113,6 +109,7 @@
     /* Rendre le burger visible sur les petits écrans */
     .burger {
         display: flex;
+        margin-top: 5%;
     }
 
     .navLinksMobile.open {

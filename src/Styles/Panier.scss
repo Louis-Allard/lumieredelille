@@ -3,6 +3,8 @@
 .panier {
     display: flex;
     align-items: center; 
+    margin-left: 45%;
+    margin-top: 7%;
 }
 
 .logoPanier {
@@ -29,4 +31,28 @@
     margin: 0;
     font-family: 'Roboto', sans-serif;
     color: #000;
+}
+
+@media (max-width: 768px) {
+
+    .panier {
+        display: flex;
+        align-items: center; 
+    }
+
+    .logoPanier {
+        width: 1.5rem; 
+        height: auto; 
+    }
+    
+    .titrePanier {
+        font-size: 0.8rem;
+    }
+    
+    .articlePanier {
+        font-size: 0.83rem;
+    }
+    
+    
+    
 }

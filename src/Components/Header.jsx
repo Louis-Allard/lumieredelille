@@ -10,16 +10,18 @@ const Header = () => {
     return (
         <div>
 
-        <div className="header">
-            <Link to="/">
-            <img src={Logo} alt="Logo" className="logoLLDL" />
-            </Link>
-            <NavBar/>
-            <SearchBar/>
-        </div>
-        <div className="panierGroup">
-            <Panier/>
-        </div>
+            <div className="header">
+                <Link to="/">
+                <img src={Logo} alt="Logo" className="logoLLDL" />
+                </Link>
+                <NavBar/>
+                <SearchBar/>
+
+                {/* <div className="panierGroup">
+                <Panier/>
+                </div> */}
+                
+            </div>
         </div>
     );
 };
