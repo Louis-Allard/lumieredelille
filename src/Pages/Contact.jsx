@@ -14,13 +14,19 @@ const Contact=()=>{
         </div>
 
         <Formulaire/>
+            <div className="blocInfoContact">
+                <p className="textSousForm">Si vous souhaitez envoyer votre tapuscrit, merci de me l’adresser par mail ou par courrier.</p>
 
-        <p>Si vous souhaitez envoyer votre tapuscrit, merci de me l’adresser par mail ou par courrier.</p>
 
-        <p>Coordonnées :
-Adresse :Les Lumières de Lille3 avenue Poincaré, 59700 Marcq-en-Barœul, France
-Email : frederic@leslumieresdelille.com
-Téléphone : +33 (0)3 XX XX XX XX</p>
+                <ul className="contact">
+
+                <p className="textInfoContact"><span className="spanContact">Coordonnées :</span></p>
+
+                    <li><span className="spanContact">Adresse :</span><br></br>Les Lumières de Lille <br></br>3 avenue Poincaré, 59700 Marcq-en-Barœul, France </li>
+                    <li><span className="spanContact">Email : </span>frederic@leslumieresdelille.com</li>
+                    <li><span className="spanContact">Téléphone : </span>+33 (0)3 XX XX XX XX</li>
+                </ul>
+            </div>
 
     </div>
     )

@@ -14,6 +14,13 @@ const Formulaire = () => {
       .min(2, "Le prénom doit comporter au minimum 2 caractères")
       .required("Le prénom est requis"),
 
+      telephone: Yup.string()
+      .matches(
+        /^(\+?\d{1,3}[- ]?)?\d{10}$/,
+        "Le numéro de téléphone doit comporter 10 chiffres"
+      )
+      .required("Le téléphone est requis"),
+
     email: Yup.string()
       .email("Adresse email invalide")
       .required("L'adresse email est requise"),
@@ -30,6 +37,7 @@ const Formulaire = () => {
         initialValues={{
           nom: "",
           prenom: "",
+          telephone: "",
           email: "",
           message: "",
         }}
@@ -49,6 +57,12 @@ const Formulaire = () => {
             <label htmlFor="prenom">Prénom</label>
             <Field name="prenom" type="text" />
             <ErrorMessage name="prenom" component="div" className="error" />
+          </div>
+
+          <div className="form-field">
+            <label htmlFor="telephone">Téléphone</label>
+            <Field name="telephone" type="text" />
+            <ErrorMessage name="telephone" component="div" className="error" />
           </div>
 
           <div className="form-field">
