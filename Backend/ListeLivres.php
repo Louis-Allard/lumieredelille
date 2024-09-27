@@ -1,8 +1,17 @@
 <?php
 require 'connexion.php';
+session_start();
 
 // Requête pour récupérer tous les livres
-$sql = "SELECT * FROM livres";
+$sql = "SELECT * FROM livres
+ORDER BY 
+    CASE 
+        WHEN LOWER(titre) LIKE 'l''%' THEN SUBSTRING(titre FROM 3)
+        WHEN LOWER(titre) LIKE 'le %' THEN SUBSTRING(titre FROM 4)
+        WHEN LOWER(titre) LIKE 'la %' THEN SUBSTRING(titre FROM 4)
+        WHEN LOWER(titre) LIKE 'les %' THEN SUBSTRING(titre FROM 5)
+        ELSE titre 
+    END ASC";
 $stmt = $connexion->prepare($sql);
 $stmt->execute();
 $livres = $stmt->fetchAll(PDO::FETCH_ASSOC);
