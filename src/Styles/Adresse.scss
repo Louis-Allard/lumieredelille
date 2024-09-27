@@ -1,0 +1,118 @@
+.titreAdresse{
+    margin-top: 30px;
+    font-family: 'Roboto', sans-serif;
+    color:#0E2B46 ;
+    text-align: center;
+    font-size: 2.1rem;
+    font-weight: 510;
+    letter-spacing: 0.15rem;
+}
+
+.titreBoutonAdresse{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 30%;
+    margin-right: 10%;
+}
+
+.titrePageAdresse{
+    color: white;
+    background-color: #0E2B46;
+    text-align: center;
+    width: 55%;
+    margin-left: 10%;
+    margin: 0 auto;
+    margin-top: 4%;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+.ligneChampAdresse{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2%;
+    width: 100%;
+    // border: solid green;
+
+}
+
+.formAdresse{
+    display:flex;
+    flex-direction: column;
+    align-content: center;
+    width: 50%;
+    margin-left: 24%;
+    // border: solid red;
+}
+
+.form-fieldAdresseMail,.form-fieldAdresseNo{
+    width: 64%;
+}
+
+.form-fieldAdresseNomAd, .form-fieldAdressePrenomAd{
+    width: 45%;
+}
+
+
+
+@media (max-width: 768px) {
+
+    .titreAdresse{
+        margin-top: 20px;
+        font-family: 'Roboto', sans-serif;
+        color:#0E2B46 ;
+        text-align: center;
+        font-size: 0.8rem;
+        font-weight: 510;
+        letter-spacing: 0.15rem;
+    }
+    
+    .titreBoutonAdresse{
+        margin-left: 5%;
+        margin-right: 10%;
+    }
+    
+    .titrePageAdresse{
+        color: white;
+        background-color: #0E2B46;
+        text-align: center;
+        width: 80%;
+        margin-left: 10%;
+        margin: 0 auto;
+        margin-top: 4%;
+        font-family: 'Roboto', sans-serif;
+        font-size: 15px;
+    
+    }
+
+    .ligneChampAdresse{
+        display: flex;
+        justify-content: space-between;
+        margin-top: 10%;
+        width: 95%;
+        height: 20px;
+        margin-right: 5%;
+        border: solid green;
+    
+    }
+    
+    .formAdresse{
+        display:flex;
+        flex-direction: column;
+        align-content: center;
+        width: 79%;
+        margin-left: 10%;
+    }
+    
+    .form-fieldAdresseMail,.form-fieldAdresseNo{
+        width: 64%;
+    }
+    
+    .form-fieldAdresseNomAd, .form-fieldAdressePrenomAd{
+        width: 45%;
+    }
+    
+    
+    
+}

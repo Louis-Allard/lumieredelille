@@ -13,6 +13,8 @@ import QuiSommesNous from "./Pages/QuiSommesNous";
 import DetailLivre from "./Pages/DetailLivre";
 import Actualités from "./Pages/Actualités";
 import VotrePanier from "./Pages/VotrePanier";
+import Adresse from "./Pages/Adresse";
+import Paiement from "./Pages/Paiement";
 
 
 const App = () => {
@@ -31,6 +33,8 @@ const App = () => {
             <Route path="/detail_livre/:id" element={<DetailLivre />} />
             <Route path="/actualités" element={<Actualités/>}/>
             <Route path="/votre_panier" element={<VotrePanier/>}/>
+            <Route path="/adresse_livraison_facturation" element={<Adresse/>}/>
+            <Route path="/paiement" element={<Paiement/>}/>
             </Routes>
           <Footer/>
         </div>

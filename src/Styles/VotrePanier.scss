@@ -3,37 +3,128 @@
     margin-bottom: 20px;
     font-family: 'Roboto', sans-serif;
     color:#0E2B46 ;
+    font-size: 0.8rem;
+    margin-left: 9%;
 }
 
 .trait {
-    background-color: #0E2B46;
-    color: white;
+    background: linear-gradient(to bottom, #f4f4f400 90%, #0E2B46 50%);
     padding: 5px;
 }
 
-h1 {
+.trait:hover{
+    background: linear-gradient(to bottom, #ebe8e876 90%, #0E2B46 50%);
+}
+.panierEtape2{
+    padding: 5px;
+}
+
+.panierEtape2:hover{
+    background-color: rgba(128, 128, 128, 0.496);
+    color: white;
+}
+.panierEtape3{
+    padding: 5px;
+}
+
+.panierEtape3:hover{
+    background-color: rgba(128, 128, 128, 0.496);
+    color: white;
+}
+
+.panierEtape1{
+    padding: 5px;
+}
+
+.panierEtape1:hover{
+    background-color: rgba(128, 128, 128, 0.496);
+    color: white;
+}
+
+.titreVotrePanier{
     margin-top: 20px;
     font-family: 'Roboto', sans-serif;
     color:#0E2B46 ;
-
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 510;
+    letter-spacing: 0.15rem;
 }
 
-.boutonAchat {
+.boutonAchatVotrePanier{
     margin-top: 20px;
     padding: 10px 20px;
     background-color: #5a4c7a;
+    font-family: 'Roboto', sans-serif;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 15px;
     cursor: pointer;
     transition: background-color 0.3s;
 }
 
-.boutonAchat:hover {
+.boutonAchatVotrePanier:hover {
     background-color: #3e3a5a;
 }
 
+.titreBoutonAchat{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 40%;
+    margin-right: 10%;
+}
+
+.linkAdresse{
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    color:#0E2B46 ;
+}
+
+.linkPanier{
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    color:#0E2B46 ;
+}
+
+.linkPaiement{
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    color:#0E2B46 ;
+}
 
 @media (max-width: 768px) {
+    .etape {
+        font-size: 0.45rem;
+    }
+    
+    .trait {
+        padding: 2px;
+    }
+    
+    .titreVotrePanier{
+        margin-top: 0.6rem;
+        font-size: 1.2rem;
+        // border: solid red;
+        margin-left: 10%;
+    }
+    
+    .boutonAchatVotrePanier{
+        margin-top: -0.2rem;
+        padding: 0.5rem 0.5rem;
+        width: 7rem;
+        // border: solid rgb(13, 255, 0);
+        font-size: 9px;
+
+    }
+    
+    
+    .titreBoutonAchat{
+        margin-left: 15%;
+        margin-top: -1rem;
+        width: 80%;
+        // border: solid rgb(81, 0, 255);
+
+    }
     
 }
