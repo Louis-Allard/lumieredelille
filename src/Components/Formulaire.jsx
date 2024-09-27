@@ -47,33 +47,37 @@ const Formulaire = () => {
         validationSchema={validationShema}
       >
         <Form className="form">
-          <div className="form-field">
-            <label htmlFor="nom">Nom</label>
-            <Field name="nom" type="text" />
-            <ErrorMessage name="nom" component="div" className="error" />
+          <div className="nomPrenom">
+            <div className="form-fieldNom">
+              <label htmlFor="nom">Nom</label>
+              <Field name="nom" type="text" placeholder="Nom" />
+              <ErrorMessage name="nom" component="div" className="error" />
+            </div>
+
+            <div className="form-fieldPrenom">
+              <label htmlFor="prenom">Prénom</label>
+              <Field name="prenom" type="text" placeholder="Prénom" />
+              <ErrorMessage name="prenom" component="div" className="error" />
+            </div>
           </div>
 
-          <div className="form-field">
-            <label htmlFor="prenom">Prénom</label>
-            <Field name="prenom" type="text" />
-            <ErrorMessage name="prenom" component="div" className="error" />
+          <div className="mailTelephone">
+            <div className="form-fieldTel">
+              <label htmlFor="telephone">Téléphone</label>
+              <Field name="telephone" type="text" placeholder="Téléphone"/>
+              <ErrorMessage name="telephone" component="div" className="error" />
+            </div>
+
+            <div className="form-fieldMail">
+              <label htmlFor="email">Email</label>
+              <Field name="email" type="email" placeholder="E-mail"/>
+              <ErrorMessage name="email" component="div" className="error" />
+            </div>
           </div>
 
-          <div className="form-field">
-            <label htmlFor="telephone">Téléphone</label>
-            <Field name="telephone" type="text" />
-            <ErrorMessage name="telephone" component="div" className="error" />
-          </div>
-
-          <div className="form-field">
-            <label htmlFor="email">Email</label>
-            <Field name="email" type="email" />
-            <ErrorMessage name="email" component="div" className="error" />
-          </div>
-
-          <div className="form-field">
+          <div className="form-fieldMessage">
             <label htmlFor="message">Message</label>
-            <Field as="textarea" name="message" />
+            <Field as="textarea" name="message" placeholder="Votre message ..."/>
             <ErrorMessage name="message" component="div" className="error" />
           </div>
 
