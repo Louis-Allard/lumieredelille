@@ -13,6 +13,10 @@
     margin-right: 10px; 
 }
 
+.logoPanier:hover {
+    transform: scale(1.1);
+}
+
 .textPanier {
     display: flex;
     flex-direction: column;
@@ -38,6 +42,7 @@
     .panier {
         display: flex;
         align-items: center; 
+        margin-left: 62%;
     }
 
     .logoPanier {

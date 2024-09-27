@@ -12,6 +12,7 @@ import MentionsLegales from "./Pages/MentionsLegales";
 import QuiSommesNous from "./Pages/QuiSommesNous";
 import DetailLivre from "./Pages/DetailLivre";
 import Actualités from "./Pages/Actualités";
+import VotrePanier from "./Pages/VotrePanier";
 
 
 const App = () => {
@@ -29,6 +30,7 @@ const App = () => {
             <Route path="/qui_sommes_nous?" element={<QuiSommesNous/>}/>
             <Route path="/detail_livre/:id" element={<DetailLivre />} />
             <Route path="/actualités" element={<Actualités/>}/>
+            <Route path="/votre_panier" element={<VotrePanier/>}/>
             </Routes>
           <Footer/>
         </div>
