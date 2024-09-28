@@ -15,10 +15,12 @@ import Actualités from "./Pages/Actualités";
 import VotrePanier from "./Pages/VotrePanier";
 import Adresse from "./Pages/Adresse";
 import Paiement from "./Pages/Paiement";
+import { PanierProvider } from "./Components/PanierContext";
 
 
 const App = () => {
     return (
+      <PanierProvider>
       <Router>
         <div>
           <Header/>
@@ -39,6 +41,7 @@ const App = () => {
           <Footer/>
         </div>
       </Router>
+      </PanierProvider>
     );
 };
 

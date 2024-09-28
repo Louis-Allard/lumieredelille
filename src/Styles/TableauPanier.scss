@@ -1,0 +1,97 @@
+
+.titrePagePanier{
+    color: white;
+    background-color: #0E2B46;
+    width: 90%;
+    margin-left: 10%;
+    margin: 0 auto;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    display: flex;
+    height: 2rem;
+
+}
+
+.colonneImage{
+   width: 2.5rem;
+}
+
+.colonneDesign{
+    width: 15rem;
+}
+
+.tablePanier {
+    width: 85%;
+    border-collapse: collapse;
+    margin-left: 6%;
+}
+
+    
+    
+.cartesContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Espace entre les cartes */
+}
+    
+.cartePanierHorizontale {
+    background-color: #D9D9D9;
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    width: 88%;
+    margin-left: 5%;
+}
+  
+.imageCartePanier {
+    width: 7rem;
+    height: auto;
+}
+  
+.infoCartePanier {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    flex: 1; /* Ce bloc prend l'espace disponible */
+}
+  
+.titreCartePanier {
+    font-size: 18px;
+    margin: 0;
+    font-weight: bold;
+}
+  
+.auteurCartePanier,
+.isbnCartePanier,
+.prixCartePanier {
+    font-size: 14px;
+    color: #666;
+    // margin-top: 5px;
+  }
+  
+.quantiteContainer {
+    margin: 0 20px; /* Espace à gauche et à droite du bloc de quantité */
+    font-size: 14px;
+}
+  
+.fraisEtTotalContainer {
+    text-align: right;
+}
+  
+.fraisPortCartePanier,
+.totalCartePanier {
+    font-size: 14px;
+    margin: 5px 0;
+}
+    
+hr {
+    border: none;
+    height: 0.5rem;
+    background-color: #0E2B46;
+    margin-left: 5%; 
+    width: 90%;
+    margin-top: 10px;
+}
