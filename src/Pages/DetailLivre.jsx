@@ -69,10 +69,21 @@ const DetailLivre = () => {
                             )}
                         </div>
                         <p className="descriptCardLivre"><strong>Description : </strong>{livre.descriptif}</p>
-                        <button className="buttonPanier" onClick={() => ajouterAuPanier(livre)}>
-                            <img src={LogoPanier2} alt="Panier" className="iconPanier" />
-                            Ajouter au panier
-                        </button>
+
+                        <button 
+                        className="buttonPanier" 
+                        onClick={() => {
+                            if (livre.stock > 0) {
+                                ajouterAuPanier(livre);
+                            } else {
+                                alert("Désolé, cet article est en rupture de stock.");
+                            }
+                        }}
+                    >
+                        <img src={LogoPanier2} alt="Panier" className="iconPanier" />
+                        Ajouter au panier
+                    </button>
+                        
                     </div>
                 </div>
             ) : (

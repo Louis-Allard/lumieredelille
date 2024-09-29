@@ -3,16 +3,11 @@ import "../Styles/TableauPanier.scss";
 import { usePanier } from "../Components/PanierContext";
 
 const TableauPanier = () => {
-    const { panier } = usePanier(); // Récupérer le contenu du panier depuis le contexte
-
-    const fraisDePort = 5; // Exemple de frais de port fixe
-
-    // Calcul du montant total du panier
-    const montantTotalPanier = panier.reduce((total, item) => total + item.prix * item.quantite, 0);
-    const totalAvecFraisDePort = montantTotalPanier + fraisDePort;
+    const { panier, ajouterAuPanier, retirerDuPanier, nombreTotalArticles, supprimerDuPanier } = usePanier(); // Récupérer les fonctions du contexte
 
     return (
         <div className="cartesContainer">
+
             {/* En-tête des colonnes */}
             <div className="titrePagePanier">
                 <div className="colonneImage"></div>
@@ -20,6 +15,7 @@ const TableauPanier = () => {
                 <div className="colonneQuantite">Quantité</div>
                 <div className="colonneFraisPort">Frais de port</div>
                 <div className="colonneTotal">Total</div>
+                <div className="colonneActions">Actions</div> {/* Nouvelle colonne pour les actions */}
             </div>
 
             {panier.length > 0 ? (
@@ -38,22 +34,60 @@ const TableauPanier = () => {
                                 <h3 className="titreCartePanier">{item.titre}</h3>
                                 <p className="auteurCartePanier">Auteur: {item.auteur}</p>
                                 <p className="isbnCartePanier">ISBN: {item.isbn}</p>
+                                <p className="portCartePanier">Frais de port : {item.frais_port} €</p>
                                 <p className="prixCartePanier">{item.prix} €</p>
                             </div>
 
-                            {/* Quantité au centre */}
-                            <div className="quantiteContainer">
-                                <p>Quantité: {item.quantite}</p>
-                            </div>
+                            {/* Bloc pour gérer la quantité */}
+                            <div className="quantitePortPrix">
 
-                            {/* Bloc frais de port et total à droite */}
-                            <div className="fraisEtTotalContainer">
-                                <p className="fraisPortCartePanier">Frais de port: {fraisDePort} €</p>
-                                <p className="totalCartePanier">Total: {(item.prix * item.quantite).toFixed(2)} €</p>
+                                {/* Bloc de gestion de la quantité */}
+                                <div className="quantiteContainer">
+                                    <button
+                                        onClick={() => retirerDuPanier(item)}
+                                        className="btnDecrement"
+                                        disabled={item.quantite === 1} // Désactiver le bouton si quantité = 1
+                                    >
+                                        -
+                                    </button>
+                                    <p className="quantiteDisplay">{item.quantite}</p>
+                                    <button
+                                        onClick={() => ajouterAuPanier(item)}
+                                        className="btnIncrement"
+                                    >
+                                        +
+                                    </button>
+                                </div>
+
+                                {/* Bouton de suppression */}
+                                <div className="actionsContainer">
+                                    <button
+                                        onClick={() => supprimerDuPanier(item)} // Retirer l'article
+                                        className="btnSupprimer"
+                                    >
+                                        Supprimer
+                                    </button>
+                                </div>
+
+
+
+                                {/* Frais de port en fonction de la quantité */}
+                                <div className="fraisEtTotalContainer">
+                                    <p className="fraisPortCartePanier">
+                                        {(item.frais_port * item.quantite).toFixed(2)} €
+                                    </p>
+                                </div>
+
+                                {/* Total (prix * quantité) */}
+                                <div className="prixTotalContainer">
+                                    <p className="totalCartePanier">
+                                        {(item.prix * item.quantite).toFixed(2)} €
+                                    </p>
+                                </div>
+
                             </div>
                         </div>
                     ))}
-
                 </>
             ) : (
                 <p>Votre panier est vide.</p>
