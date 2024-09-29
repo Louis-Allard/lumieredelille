@@ -1,6 +1,9 @@
 import React from "react";
 import "../Styles/TableauPanier.scss";
 import { usePanier } from "../Components/PanierContext";
+import Poubelle from "../Assets/poubelle-de-recyclage.png";
+import Plus from "../Assets/symbole-epais-daddition.png";
+import Moins from "../Assets/signe-moins.png";
 
 const TableauPanier = () => {
     const { panier, ajouterAuPanier, retirerDuPanier, nombreTotalArticles, supprimerDuPanier } = usePanier(); // Récupérer les fonctions du contexte
@@ -43,46 +46,34 @@ const TableauPanier = () => {
 
                                 {/* Bloc de gestion de la quantité */}
                                 <div className="quantiteContainer">
-                                    <button
-                                        onClick={() => retirerDuPanier(item)}
-                                        className="btnDecrement"
-                                        disabled={item.quantite === 1} // Désactiver le bouton si quantité = 1
-                                    >
-                                        -
-                                    </button>
-                                    <p className="quantiteDisplay">{item.quantite}</p>
-                                    <button
-                                        onClick={() => ajouterAuPanier(item)}
-                                        className="btnIncrement"
-                                    >
-                                        +
-                                    </button>
-                                </div>
+                                    <img src={Moins} alt="Moins" className="symboleMoins"
+                                    onClick={() => retirerDuPanier(item)}
+                                    disabled={item.quantite === 1}
+                                    />
 
+                                    <p className="quantiteDisplay">{item.quantite}</p>
+
+                                    <img src={Plus} alt="Plus" className="symbolePlus"
+                                    onClick={() => ajouterAuPanier(item)}
+                                    />
+
+                                    
+                                </div>
+                                
                                 {/* Bouton de suppression */}
                                 <div className="actionsContainer">
-                                    <button
-                                        onClick={() => supprimerDuPanier(item)} // Retirer l'article
-                                        className="btnSupprimer"
-                                    >
-                                        Supprimer
-                                    </button>
+                                    <img src={Poubelle} alt="Suppression" className="suppression" onClick={() => supprimerDuPanier(item)} />
                                 </div>
-
 
 
                                 {/* Frais de port en fonction de la quantité */}
-                                <div className="fraisEtTotalContainer">
-                                    <p className="fraisPortCartePanier">
-                                        {(item.frais_port * item.quantite).toFixed(2)} €
-                                    </p>
+                                <div className="fraisPortCartePanier">
+                                <p>{(item.frais_port * item.quantite).toFixed(2)} €</p>
                                 </div>
 
                                 {/* Total (prix * quantité) */}
-                                <div className="prixTotalContainer">
-                                    <p className="totalCartePanier">
-                                        {(item.prix * item.quantite).toFixed(2)} €
-                                    </p>
+                                <div className="totalCartePanier" >
+                                <p>{(item.prix * item.quantite).toFixed(2)} €</p>
                                 </div>
 
                             </div>

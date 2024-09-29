@@ -60,7 +60,7 @@
 }
   
 .imageCartePanier {
-    width: 7rem;
+    width: 5.4rem;
     height: auto;
 }
   
@@ -68,8 +68,7 @@
     display: flex;
     flex-direction: column;
     margin-left: 20px;
-    // margin-right: 60%;
-    flex: 1; /* Ce bloc prend l'espace disponible */
+    flex: 1;
 }
   
 .titreCartePanier {
@@ -94,30 +93,33 @@
 
 .quantitePortPrix{
     display: flex;
-    justify-content: space-around;
+    // justify-content: space-around;
     align-items: center;
     width: 70%;
     color: #0E2B46;
     font-family: 'Roboto', sans-serif;
 }
 
-.quantiteContainer {
-    font-size: 14px;
-}
   
 .fraisEtTotalContainer {
     text-align: right;
-
 }
 
   
-.fraisPortCartePanier,
 .totalCartePanier {
     font-size: 25px;
     font-weight: bolder;
-    margin: 5px 0;
+    width: 55rem;
 }
     
+
+.fraisPortCartePanier {
+    font-size: 18px;
+    font-weight: bold;
+    width: 85rem;
+}
+
+
 hr {
     border: none;
     height: 0.5rem;
@@ -125,4 +127,40 @@ hr {
     margin-left: 5%; 
     width: 90%;
     margin-top: 10px;
+}
+
+.suppression{
+    width: 1.3rem;
+}
+
+.suppression:hover{
+    cursor: pointer;
+}
+
+.actionsContainer{
+    margin-right: 12rem;
+}
+.quantiteContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid grey;
+    background-color: white;
+    height: 30px;
+    width: 100px; 
+    border-radius: 5px;
+    margin-left: 8rem;
+}
+
+.symboleMoins, .symbolePlus {
+    width: 1rem;
+    height: 1rem;
+    cursor: pointer;
+}
+
+.quantiteDisplay {
+    width: 30px;
+    text-align: center;
+    font-size: 16px; 
+    font-weight: bold;
 }
