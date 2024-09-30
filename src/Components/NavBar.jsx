@@ -38,8 +38,8 @@ const Navbar = () => {
 
             {/* Menu de navigation pour les petits écrans */}
             <div className={`navLinksMobile ${isOpen ? "open" : ""}`}>
-                <Link to="/nos_autrices_auteurs" className="navItem">Autrices/Auteurs</Link>
-                <Link to="/vos_avis" className="navItem">Vos Avis</Link>
+                <Link to="/nos_autrices_auteurs" className="navItem" title="Autrices - Auteurs">Autrices/Auteurs</Link>
+                <Link to="/catalogue" className="navItem">Catalogue</Link>
                 <Link to="/actualités" className="navItem">Actualités</Link>
                 <Link to="/contact" className="navItem">Contact</Link>
             </div>

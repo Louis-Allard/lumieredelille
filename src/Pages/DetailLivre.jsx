@@ -71,18 +71,20 @@ const DetailLivre = () => {
                         <p className="descriptCardLivre"><strong>Description : </strong>{livre.descriptif}</p>
 
                         <button 
-                        className="buttonPanier" 
-                        onClick={() => {
-                            if (livre.stock > 0) {
-                                ajouterAuPanier(livre);
-                            } else {
-                                alert("Désolé, cet article est en rupture de stock.");
-                            }
-                        }}
-                    >
-                        <img src={LogoPanier2} alt="Panier" className="iconPanier" />
-                        Ajouter au panier
-                    </button>
+                            className={`buttonPanier ${livre.stock > 0 ? "" : "disabled"}`} 
+                            title={livre.stock > 0 ? "Ajouter au panier" : "Rupture de stock"}
+                            onClick={() => {
+                                if (livre.stock > 0) {
+                                    ajouterAuPanier(livre);
+                                } else {
+                                    alert("Désolé, cet article est en rupture de stock.");
+                                }
+                            }}
+                            disabled={livre.stock === 0} // Désactiver le bouton si stock est 0
+                        >
+                            <img src={LogoPanier2} alt="Panier" className="iconPanier" />
+                            {livre.stock > 0 ? "Ajouter au panier" : "Rupture de stock"}
+                        </button>
                         
                     </div>
                 </div>

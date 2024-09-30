@@ -10,7 +10,7 @@ const Panier = () => {
     return (
         <div className="panier">
             <Link to="/votre_panier">
-                <img src={LogoPanier} alt="Panier" className="logoPanier" />
+                <img src={LogoPanier} alt="Panier" className="logoPanier" title="Mon panier"/>
             </Link>
             <div className="textPanier">
                 <p className="titrePanier">Mon panier</p>

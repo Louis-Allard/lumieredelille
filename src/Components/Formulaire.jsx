@@ -81,7 +81,7 @@ const Formulaire = () => {
             <ErrorMessage name="message" component="div" className="error" />
           </div>
 
-          <button type="submit" className="form-button">
+          <button type="submit" className="form-button" title="Envoyer">
             Envoyer
           </button>
         </Form>

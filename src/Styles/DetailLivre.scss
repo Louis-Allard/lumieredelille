@@ -128,6 +128,11 @@
     color: #0E2B46;
 }
 
+.buttonPanier.disabled {
+    background-color: grey; /* Couleur pour indiquer la rupture de stock */
+    cursor: not-allowed; /* Change le curseur pour indiquer que le bouton est désactivé */
+}
+
 
 @media (max-width: 768px) {
     .cardLivre {

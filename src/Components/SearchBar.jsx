@@ -27,7 +27,7 @@ const SearchBar = () => {
                     }}
                     placeholder="Rechercher un produit..."
                 />
-                <button type="submit" className="buttonSearch">
+                <button type="submit" className="buttonSearch" title="Rechercher">
                     <img src={Loupe} alt="Loupe" className="loupe" />
                 </button>
             </form>

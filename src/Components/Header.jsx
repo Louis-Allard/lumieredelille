@@ -12,14 +12,11 @@ const Header = () => {
 
             <div className="header">
                 <Link to="/">
-                <img src={Logo} alt="Logo" className="logoLLDL" />
+                <img src={Logo} alt="Logo" className="logoLLDL" title="Retour à l'accueil" />
                 </Link>
                 <NavBar/>
                 <SearchBar/>
 
-                {/* <div className="panierGroup">
-                <Panier/>
-                </div> */}
                 
             </div>
         </div>
