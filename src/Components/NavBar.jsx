@@ -23,8 +23,8 @@ const Navbar = () => {
                     <button className="buttonNavBar">Autrices/Auteurs</button>
                 </Link>
 
-                <Link to="/vos_avis" className="buttonNavBar">
-                    <button className="buttonNavBar">Vos Avis</button>
+                <Link to="/catalogue" className="buttonNavBar">
+                    <button className="buttonNavBar">Catalogue</button>
                 </Link>
 
                 <Link to="/actualités" className="buttonNavBar">

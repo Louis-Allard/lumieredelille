@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./Pages/Home";
 import NosAutricesAuteurs from "./Pages/NosAutricesAuteurs";
-import VosAvis from "./Pages/VosAvis";
+import Catalogue from "./Pages/Catalogue";
 import Contact from "./Pages/Contact";
 import Footer from "./Components/Footer";
 import "./App.css";
@@ -27,7 +27,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/nos_autrices_auteurs" element={<NosAutricesAuteurs />} />
-            <Route path="/vos_avis" element={<VosAvis/>}/>
+            <Route path="/catalogue" element={<Catalogue/>}/>
             <Route path="/contact" element={<Contact/>}/>
             <Route path="/CGV" element={<CGV/>}/>
             <Route path="/mentions_legales" element={<MentionsLegales/>}/>

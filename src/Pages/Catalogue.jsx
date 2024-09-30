@@ -1,13 +1,13 @@
 import React from "react";
 
-const VosAvis=()=>{
+const Catalogue =()=>{
     return(
         <div class="content">
 
-        <h1>Vos avis</h1>
+        <h1>Catalogue</h1>
         </div>
     )
 
 };
 
-export default VosAvis;
+export default Catalogue;
