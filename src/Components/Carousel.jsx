@@ -45,7 +45,7 @@ const Carousel = () => {
                     livres.map((livre) => (
                         <div key={livre.id}>
                             <Link to={`/detail_livre/${livre.id}`}>
-                                <img src={`http://localhost/Editeur/${livre.image_url}`} alt={livre.titre} />
+                                <img src={`http://localhost/Editeur/${livre.image_url}`} alt={livre.titre} title="Cliquez pour plus de détail sur ce livre" />
                             </Link>
                         </div>
                     ))

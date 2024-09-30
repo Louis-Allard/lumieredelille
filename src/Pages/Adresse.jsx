@@ -19,15 +19,9 @@ const Adresse = () => {
     <div className="content">
       <div className="etape">
         <h2>
-          <Link to="/votre_panier" className="linkPanier">
             <span className="panierEtape1">Étape 1 : Panier</span> &gt;
-          </Link>
-
-          <span className="trait">Étape 2 : Adresses</span> &gt;
-
-          <Link to="/paiement" className="linkPaiement">
+            <span className="trait">Étape 2 : Adresses</span> &gt;
             <span className="panierEtape3">Étape 3 : Paiement</span>
-          </Link>
         </h2>
       </div>
 

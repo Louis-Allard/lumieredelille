@@ -19,26 +19,26 @@ const Navbar = () => {
             
             {/* Menu de navigation pour les grands écrans */}
             <div className="navLinks">
-                <Link to="/nos_autrices_auteurs" className="buttonNavBar">
+                <Link to="/nos_autrices_auteurs" className="buttonNavBar" title="Autrices - Auteurs">
                     <button className="buttonNavBar">Autrices/Auteurs</button>
                 </Link>
 
-                <Link to="/catalogue" className="buttonNavBar">
+                <Link to="/catalogue" className="buttonNavBar" title="Catalogue">
                     <button className="buttonNavBar">Catalogue</button>
                 </Link>
 
                 <Link to="/actualités" className="buttonNavBar">
-                    <button className="buttonNavBar">Actualités</button>
+                    <button className="buttonNavBar" title="Actualités">Actualités</button>
                 </Link>
 
                 <Link to="/contact" className="buttonNavBar">
-                    <button className="buttonNavBar">Contact</button>
+                    <button className="buttonNavBar" title="Contact">Contact</button>
                 </Link>
             </div>
 
             {/* Menu de navigation pour les petits écrans */}
             <div className={`navLinksMobile ${isOpen ? "open" : ""}`}>
-                <Link to="/nos_autrices_auteurs" className="navItem" title="Autrices - Auteurs">Autrices/Auteurs</Link>
+                <Link to="/nos_autrices_auteurs" className="navItem">Autrices/Auteurs</Link>
                 <Link to="/catalogue" className="navItem">Catalogue</Link>
                 <Link to="/actualités" className="navItem">Actualités</Link>
                 <Link to="/contact" className="navItem">Contact</Link>
