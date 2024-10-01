@@ -31,7 +31,7 @@ try {
         }
     } else {
         // Si l'ID n'est pas fourni, retourner tous les livres
-        $sql = "SELECT id, titre, auteur, isbn, prix, frais_port, image_url, date_publication, poids FROM livres";
+        $sql = "SELECT id, image_url FROM livres ORDER BY date_publication LIMIT 6";
         $stmt = $connexion->prepare($sql);
         $stmt->execute();
         $livres = $stmt->fetchAll(PDO::FETCH_ASSOC);

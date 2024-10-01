@@ -7,7 +7,7 @@ const Carousel = () => {
     const [livres, setLivres] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost/Editeur/Api.php')
+        fetch('http://localhost/Editeur/API_Carousel.php')
         .then(response => response.json())
         .then(data => {
             console.log("Données des livres reçues:", data);

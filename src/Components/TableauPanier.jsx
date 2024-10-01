@@ -16,7 +16,6 @@ const TableauPanier = () => {
                 <div className="colonneImage"></div>
                 <div className="colonneDesign">Désignation</div>
                 <div className="colonneQuantite">Quantité</div>
-                <div className="colonneFraisPort">Frais de port</div>
                 <div className="colonneTotal">Total</div>
                 <div className="colonneActions">Actions</div> {/* Nouvelle colonne pour les actions */}
             </div>
@@ -37,7 +36,7 @@ const TableauPanier = () => {
                                 <h3 className="titreCartePanier">{item.titre}</h3>
                                 <p className="auteurCartePanier">Auteur: {item.auteur}</p>
                                 <p className="isbnCartePanier">ISBN: {item.isbn}</p>
-                                <p className="portCartePanier">Frais de port : {item.frais_port} €</p>
+                                <p className="isbnCartePanier">Poids du livre : {item.poids} g</p>
                                 <p className="prixCartePanier">{item.prix} €</p>
                             </div>
 
@@ -49,12 +48,14 @@ const TableauPanier = () => {
                                     <img src={Moins} alt="Moins" className="symboleMoins"
                                     onClick={() => retirerDuPanier(item)}
                                     disabled={item.quantite === 1}
+                                    title="Diminuer"
                                     />
 
                                     <p className="quantiteDisplay">{item.quantite}</p>
 
                                     <img src={Plus} alt="Plus" className="symbolePlus"
                                     onClick={() => ajouterAuPanier(item)}
+                                    title="Ajouter"
                                     />
 
                                     
@@ -62,14 +63,9 @@ const TableauPanier = () => {
                                 
                                 {/* Bouton de suppression */}
                                 <div className="actionsContainer">
-                                    <img src={Poubelle} alt="Suppression" className="suppression" onClick={() => supprimerDuPanier(item)} />
+                                    <img src={Poubelle} alt="Suppression" className="suppression" onClick={() => supprimerDuPanier(item)} title="Supprimer le livre"/>
                                 </div>
 
-
-                                {/* Frais de port en fonction de la quantité */}
-                                <div className="fraisPortCartePanier">
-                                <p>{(item.frais_port * item.quantite).toFixed(2)} €</p>
-                                </div>
 
                                 {/* Total (prix * quantité) */}
                                 <div className="totalCartePanier" >
