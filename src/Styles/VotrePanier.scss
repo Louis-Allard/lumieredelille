@@ -52,7 +52,7 @@
 }
 
 .boutonAchatVotrePanier{
-    margin-top: 20px;
+    margin-top: 6px;
     padding: 10px 20px;
     background-color: #5a4c7a;
     font-family: 'Roboto', sans-serif;
@@ -72,7 +72,7 @@
     align-items: center;
     justify-content: space-between;
     margin-left: 40%;
-    margin-right: 10%;
+    margin-right: 13.7%;
 }
 
 .linkAdresse{
@@ -97,9 +97,49 @@ hr {
     border: none;
     height: 0.5rem;
     background-color: #0E2B46;
-    margin-left: 13.5%; 
+    margin-left: 12.5%; 
     width: 75%;
     margin-top: 10px;
+}
+
+.tableauPanier{
+    width: 35%;
+    margin-left: 51%;
+    border: solid #D9D9D9 4px;
+    border-radius: 15px;
+    background-color: #D9D9D9;
+    margin-bottom: 10%;
+}
+
+.tableauPanier tr{
+    background-color: rgb(255, 255, 255);
+    color: #0E2B46;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+}
+
+.tableauPanier td {
+    padding: 1%;
+}
+
+.totalDuPanier{
+    background-color: rgba(178, 216, 229, 0.53);
+    font-weight: bolder;
+}
+
+.paiementSecurise{
+    display: flex;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    color:#0E2B46 ;
+    margin-left: 51%;
+    width: 15rem;
+    margin-top: -10.5%;
+}
+
+.cadenas{
+    width: 1.2rem;
+    height: 1.2rem;
 }
 
 @media (max-width: 768px) {

@@ -2,12 +2,14 @@ import React, { useEffect, useState } from "react";
 import "../Styles/VotrePanier.scss";
 import { Link } from "react-router-dom";
 import TableauPanier from "../Components/TableauPanier";
-import { usePanier } from "../Components/PanierContext"; // Vérifie que le chemin est correct
+import { usePanier } from "../Components/PanierContext";
+import Cadenas from "../Assets/lock(1).png";
 
 const VotrePanier = () => {
     const { panier, nombreTotalArticles } = usePanier(); // Utiliser le contexte
     const [total, setTotal] = useState(0);
     const [totalFraisDePort, setTotalFraisDePort] = useState(0); 
+    const [tvaPrix, setTvaPrix] = useState(0);
 
     useEffect(() => {
         // Calculer les totaux à chaque mise à jour du panier
@@ -19,9 +21,15 @@ const VotrePanier = () => {
     const calculerTotal = () => {
         const montantTotal = panier.reduce((total, item) => total + item.prix * item.quantite, 0);
         setTotal(montantTotal);
+
+        // Calculer la TVA
+        const tauxTva = 0.055;
+        let montantHT = montantTotal/(1+tauxTva);
+        let montantTva = montantTotal - montantHT;
+        setTvaPrix(montantTva);
     };
 
-    // Fonction pour calculer le montant total des frais de port
+    // Fonction pour calculer le montant total des frais de port par rapport au poids
     const calculerTotalFraisDePort = () => {
         const totalPoids = panier.reduce((total, item) => total + item.poids * item.quantite, 0);
         setTotalFraisDePort(totalPoids);
@@ -51,16 +59,43 @@ const VotrePanier = () => {
             <hr />
 
             {panier.length > 0 ? (
-                <div className="totalPanier">
-                    <p><strong>Nombre d'articles :</strong> {nombreTotalArticles}</p>
-                    <p><strong>Poids total :</strong> {totalFraisDePort.toFixed(0)} g</p>
-                    <h2><strong>Montant total :</strong> {(total + totalFraisDePort).toFixed(2)} €</h2>
-                </div>
-            ) : (
-                <p>Votre panier est vide.</p>
-            )}
+    <table className="tableauPanier">
+        <tbody>
+            <tr>
+                <td>Montant total de vos achats</td>
+                <td>{total.toFixed(2)} €</td>
+            </tr>
+            <tr>
+                <td>Dont TVA 5.5%</td>
+                <td>{tvaPrix.toFixed(2)} €</td>
+            </tr>
+            <tr>
+                <td>Poids total</td>
+                <td>{totalFraisDePort.toFixed(0)} g</td>
+            </tr>
+            <tr>
+                <td className="totalDuPanier">Total du panier</td>
+                <td className="totalDuPanier">{total.toFixed(2)} €</td>
+            </tr>
+        </tbody>
+    </table>
+) : (
+    <p>Votre panier est vide.</p>
+)}
+                    <div className="paiementSecurise">
+                        <p>Paiement sécurisé</p>
+                        <img src={Cadenas} alt="Cadenas" className="cadenas"/>
+
+                    </div>
+
+                    <div>
+                        <button>Etape suivante</button>
+                    </div>
+
+
         </div>
     );
+
 };
 
 export default VotrePanier;
