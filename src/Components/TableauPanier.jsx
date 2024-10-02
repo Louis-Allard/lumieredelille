@@ -63,7 +63,17 @@ const TableauPanier = () => {
                                 
                                 {/* Bouton de suppression */}
                                 <div className="actionsContainer">
-                                    <img src={Poubelle} alt="Suppression" className="suppression" onClick={() => supprimerDuPanier(item)} title="Supprimer le livre"/>
+                                    <img 
+                                        src={Poubelle} 
+                                        alt="Suppression" 
+                                        className="suppression" 
+                                        onClick={() => {
+                                            if (window.confirm("Êtes-vous sûr de bien vouloir supprimer ce livre ?")) {
+                                                supprimerDuPanier(item);
+                                            }
+                                        }} 
+                                        title="Supprimer le livre" 
+                                    />
                                 </div>
 
 

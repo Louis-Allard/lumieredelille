@@ -23,8 +23,8 @@ const VotrePanier = () => {
 
     // Fonction pour calculer le montant total des frais de port
     const calculerTotalFraisDePort = () => {
-        const totalFrais = panier.reduce((total, item) => total + item.frais_port * item.quantite, 0);
-        setTotalFraisDePort(totalFrais);
+        const totalPoids = panier.reduce((total, item) => total + item.poids * item.quantite, 0);
+        setTotalFraisDePort(totalPoids);
     };
 
     return (
@@ -53,7 +53,7 @@ const VotrePanier = () => {
             {panier.length > 0 ? (
                 <div className="totalPanier">
                     <p><strong>Nombre d'articles :</strong> {nombreTotalArticles}</p>
-                    <p><strong>Frais de port :</strong> {totalFraisDePort.toFixed(2)} €</p>
+                    <p><strong>Poids total :</strong> {totalFraisDePort.toFixed(0)} g</p>
                     <h2><strong>Montant total :</strong> {(total + totalFraisDePort).toFixed(2)} €</h2>
                 </div>
             ) : (

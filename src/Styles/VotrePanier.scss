@@ -93,6 +93,15 @@
     color:#0E2B46 ;
 }
 
+hr {
+    border: none;
+    height: 0.5rem;
+    background-color: #0E2B46;
+    margin-left: 13.5%; 
+    width: 75%;
+    margin-top: 10px;
+}
+
 @media (max-width: 768px) {
     .etape {
         font-size: 0.45rem;
