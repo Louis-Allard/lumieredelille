@@ -73,7 +73,7 @@ const Adresse = () => {
             </label>
           </div>
         </div>
-          <Link to="/">
+          <Link to="/paiement">
                   <button
                     type="submit"
                     className="buttonNextStepPayer"
