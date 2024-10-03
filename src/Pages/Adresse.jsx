@@ -1,27 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import "../Styles/Adresse.scss";
 import { Link } from "react-router-dom";
-import { Formik, Form, Field, ErrorMessage } from "formik";
-import * as Yup from "yup";
+import FormulaireAdresse from "../Components/FormulaireAdresse";
 
 const Adresse = () => {
-  // Schéma de validation avec Yup
-  const validationSchema = Yup.object({
-    nom: Yup.string()
-      .min(2, "Le nom doit comporter au moins 2 lettres")
-      .required("Le nom est requis"),
-    prenom: Yup.string()
-      .min(2, "Le prénom doit comporter au moins 2 lettres")
-      .required("Le prénom est requis"), // Corrigé ici
-  });
+  const [useSameAdresse, setUseSameAdresse] = useState(true);
+  const [acceptConditions, setAcceptConditions] = useState(false);
+
+  // Gère le changement de la case à cocher pour utiliser la même adresse
+  const handleChangeAdresse = () => {
+    setUseSameAdresse(!useSameAdresse);
+  };
+
+  // Gère le changement de la case à cocher des conditions générales
+  const handleConditionsChange = (event) => {
+    setAcceptConditions(event.target.checked);
+  };
 
   return (
     <div className="content">
       <div className="etape">
         <h2>
-            <span className="panierEtape1">Étape 1 : Panier</span> &gt;
-            <span className="trait">Étape 2 : Adresses</span> &gt;
-            <span className="panierEtape3">Étape 3 : Paiement</span>
+          <span className="panierEtape1">Étape 1 : Panier</span> &gt;
+          <span className="trait">Étape 2 : Adresses</span> &gt;
+          <span className="panierEtape3">Étape 3 : Paiement</span>
         </h2>
       </div>
 
@@ -34,54 +36,54 @@ const Adresse = () => {
 
       <h1 className="titrePageAdresse">Adresse de Livraison</h1>
 
-      <Formik
-        initialValues={{
-          nom: "",
-          prenom: "",
-        }}
-        onSubmit={(values) => {
-          console.log(values); // Soumission des données
-        }}
-        validationSchema={validationSchema}
-      >
-        <Form className="formAdresse">
-            <div className="ligneChampAdresse">
+      <FormulaireAdresse />
 
-                <div className="form-fieldAdresseNomAd">
-                    {/* <label htmlFor="nom">Nom</label> */}
-                    <Field name="nom" type="text" placeholder="Nom" />
-                    <ErrorMessage name="nom" component="div" className="error" />
-                </div>
+      {/* Affiche le formulaire d'adresse de facturation si nécessaire */}
+      {!useSameAdresse && (
+        <div className="facturation-container">
+          <h1 className="titrePageAdresse">Adresse de Facturation</h1>
+          <FormulaireAdresse />
+        </div>
+      )}
 
-                <div className="form-fieldAdressePrenomAd">
-                    {/* <label htmlFor="prenom">Prénom</label> */}
-                    <Field name="prenom" type="text" placeholder="Prénom" />
-                    <ErrorMessage name="prenom" component="div" className="error" />
-                </div>
-                
-            </div>
+      <div className="form-container2">
+        <div className="checkBoxAdresse">
+          <div>
+            <input
+              type="checkbox"
+              id="scales"
+              name="scales"
+              checked={useSameAdresse}
+              onChange={handleChangeAdresse}
+            />
+            <label htmlFor="scales">Utiliser la même adresse pour la livraison et la facturation</label>
+          </div>
 
-            <div className="ligneChampAdresse">
-
-                <div className="form-fieldAdresseMail">
-                    {/* <label htmlFor="nom">Nom</label> */}
-                    <Field name="mail" type="text" placeholder="E-mail" />
-                    <ErrorMessage name="mail" component="div" className="error" />
-                </div>
-
-                <div className="form-fieldAdresseTelephone">
-                    {/* <label htmlFor="prenom">Prénom</label> */}
-                    <Field name="telephone" type="text" placeholder="Téléphone" />
-                    <ErrorMessage name="telephone" component="div" className="error" />
-                </div>
-                
-            </div>
-
-          <button type="submit" className="form-button">
-            Envoyer
-          </button>
-        </Form>
-      </Formik>
+          <div>
+            <input
+              type="checkbox"
+              id="horns"
+              name="horns"
+              checked={acceptConditions}
+              onChange={handleConditionsChange}
+            />
+            <label htmlFor="horns">
+              J’ai lu et j’accepte les{" "}
+              <a href="/CGV" target="_blank" rel="noopener noreferrer">conditions générales</a>
+            </label>
+          </div>
+        </div>
+          <Link to="/">
+                  <button
+                    type="submit"
+                    className="buttonNextStepPayer"
+                    title="Valider et payer"
+                    disabled={!acceptConditions}
+                  >
+                    Valider et payer
+                  </button>
+          </Link>
+      </div>
     </div>
   );
 };

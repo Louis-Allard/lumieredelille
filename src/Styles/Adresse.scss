@@ -10,7 +10,7 @@
 
 .titreBoutonAdresse{
     display: flex;
-    align-items: center;
+    align-items: center; 
     justify-content: space-between;
     margin-left: 30%;
     margin-right: 10%;
@@ -33,27 +33,56 @@
     justify-content: space-between;
     margin-top: 2%;
     width: 100%;
-    // border: solid green;
+    border: solid green;
 
 }
 
-.formAdresse{
-    display:flex;
+.form-container2 {
+    margin: 50px auto;
+    width: 52.5%;
+    background-color: #f4f4f4;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    margin-top: -2.5rem;
+  }
+  
+  .checkBoxAdresse {
+    display: flex;
     flex-direction: column;
-    align-content: center;
-    width: 50%;
-    margin-left: 24%;
-    // border: solid red;
-}
+    gap: 10px;
+  }
+  
+  .buttonNextStepPayer {
+    background-color: #174180;
+    color: white;
+    border-radius: 25px;
+    padding: 0.5rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    width: 11rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
 
-.form-fieldAdresseMail,.form-fieldAdresseNo{
-    width: 64%;
-}
+  .buttonNextStepPayer:disabled{
+    background-color: #cccccc; 
+    color: #949494; 
+    cursor: not-allowed;
+  }
+  
+  .buttonNextStepPayer:hover {
+    background-color: #0E2B46;
+  }
 
-.form-fieldAdresseNomAd, .form-fieldAdressePrenomAd{
-    width: 45%;
-}
-
+  .buttonNextStepPayer:disabled:hover {
+    background-color: #cccccc; 
+    color: #949494; 
+  }
 
 
 @media (max-width: 768px) {
@@ -86,33 +115,7 @@
     
     }
 
-    .ligneChampAdresse{
-        display: flex;
-        justify-content: space-between;
-        margin-top: 10%;
-        width: 95%;
-        height: 20px;
-        margin-right: 5%;
-        border: solid green;
-    
-    }
-    
-    .formAdresse{
-        display:flex;
-        flex-direction: column;
-        align-content: center;
-        width: 79%;
-        margin-left: 10%;
-    }
-    
-    .form-fieldAdresseMail,.form-fieldAdresseNo{
-        width: 64%;
-    }
-    
-    .form-fieldAdresseNomAd, .form-fieldAdressePrenomAd{
-        width: 45%;
-    }
-    
+
     
     
 }
