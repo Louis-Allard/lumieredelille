@@ -89,7 +89,9 @@ const VotrePanier = () => {
                     </div>
 
                     <div>
-                        <button>Etape suivante</button>
+                        <Link to="/adresse_livraison_facturation">
+                        <button className="buttonNextStep" title="Etape suivante">Etape suivante</button>
+                        </Link>
                     </div>
 
 

@@ -24,7 +24,8 @@ const TableauPanier = () => {
                 <>
                     {panier.map((item) => (
                         <div key={item.id} className="cartePanierHorizontale">
-                            {/* Image du produit à gauche */}
+                            <div className="blocImageDescriptif">
+
                             <img
                                 src={`http://localhost/Editeur/${item.image_url}`}
                                 alt={item.titre}
@@ -39,11 +40,12 @@ const TableauPanier = () => {
                                 <p className="isbnCartePanier">Poids du livre : {item.poids} g</p>
                                 <p className="prixCartePanier">{item.prix} €</p>
                             </div>
+                            </div>
+
 
                             {/* Bloc pour gérer la quantité */}
                             <div className="quantitePortPrix">
 
-                                {/* Bloc de gestion de la quantité */}
                                 <div className="quantiteContainer">
                                     <img src={Moins} alt="Moins" className="symboleMoins"
                                     onClick={() => retirerDuPanier(item)}
@@ -81,9 +83,10 @@ const TableauPanier = () => {
                                 <div className="totalCartePanier" >
                                 <p>{(item.prix * item.quantite).toFixed(2)} €</p>
                                 </div>
+                            </div>
+
 
                             </div>
-                        </div>
                     ))}
                 </>
             ) : (
