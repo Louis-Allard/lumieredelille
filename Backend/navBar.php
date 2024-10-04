@@ -41,6 +41,8 @@
     <nav>
         <button ><a href="listeLivres.php">Liste des livres</a></button>
         <button ><a href="upload.php">Ajouter des livres</a></button>
+        <button ><a href="textPresentation.php">Texte accueil</a></button>
+        <button ><a href="backgroundImage.php">Image de fond</a></button>
         <button ><a href="logout.php">Déconnexion</a></button>
     </nav>
 </div>

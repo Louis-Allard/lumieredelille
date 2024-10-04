@@ -16,6 +16,7 @@ import VotrePanier from "./Pages/VotrePanier";
 import Adresse from "./Pages/Adresse";
 import Paiement from "./Pages/Paiement";
 import { PanierProvider } from "./Components/PanierContext";
+import BackgroundImage from "./Components/BackgroundImage";
 
 
 const App = () => {
@@ -23,6 +24,7 @@ const App = () => {
       <PanierProvider>
       <Router>
         <div>
+          {/* <BackgroundImage/> */}
           <Header/>
           <Routes>
             <Route path="/" element={<Home />} />
