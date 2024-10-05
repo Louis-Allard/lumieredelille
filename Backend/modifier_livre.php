@@ -12,15 +12,30 @@ if (isset($_GET['id'])) {
     $stmt->execute();
     $livre = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    // Si le livre n'existe pas
-    if (!$livre) {
-        echo "Livre non trouvé.";
-        exit();
-    }
-} else {
-    echo "ID de livre non spécifié.";
+ // Si le livre n'existe pas
+ if (!$livre) {
+    echo "Livre non trouvé.";
     exit();
 }
+
+// Extraire largeur et hauteur à partir du format
+list($largeur, $hauteur) = explode(' x ', $livre['format']);
+} else {
+echo "ID de livre non spécifié.";
+exit();
+}
+
+// Fonction pour valider l'ISBN
+function validateISBN($isbn) {
+    $isbn = str_replace(['-', ' '], '', $isbn);  // Supprimer les tirets et espaces
+    return preg_match('/^\d{10}$/', $isbn) || preg_match('/^\d{13}$/', $isbn);
+}
+
+// Fonction pour valider le format (ex: 220 x 140)
+function validateFormat($format) {
+    return preg_match('/^\d{2,3} x \d{2,3}$/', $format);
+}
+
 
 // Traitement du formulaire de modification
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -28,13 +43,25 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $auteur = $_POST['auteur'];
     $isbn = $_POST['isbn'];
     $prix = $_POST['prix'];
-    $frais_port = $_POST['frais_port'];
+    $poids = $_POST['poids'];
     $date_publication = $_POST['date_publication'];
-    $format = $_POST['format'];
+    $largeur = $_POST['largeur'];
+    $hauteur = $_POST['hauteur'];
     $nombre_pages = $_POST['nombre_pages'];
     $descriptif = $_POST['descriptif'];
     $stock = isset($_POST['stock']) ? 1 : 0;
 
+    
+    // Validation de l'ISBN
+    if (!validateISBN($isbn)) {
+        echo "Erreur : l'ISBN doit être valide (ISBN-10 ou ISBN-13).";
+        exit();
+    }
+
+    // Concaténation du format
+    $format = $largeur . ' x ' . $hauteur;
+
+  
     // Vérifiez si une nouvelle image a été téléchargée
     if (isset($_FILES['image']) && $_FILES['image']['error'] == UPLOAD_ERR_OK) {
         $image = $_FILES['image'];
@@ -47,13 +74,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $imageUrl = $targetFile;
 
             // Mise à jour du livre avec la nouvelle image
-            $sql = "UPDATE livres SET titre = :titre, auteur = :auteur, isbn = :isbn, prix = :prix, frais_port = :frais_port, image_url = :image_url, date_publication = :date_publication, format = :format, nombre_pages = :nombre_pages, descriptif = :descriptif, stock = :stock WHERE id = :id";
+            $sql = "UPDATE livres SET titre = :titre, auteur = :auteur, isbn = :isbn, prix = :prix, poids = :poids, image_url = :image_url, date_publication = :date_publication, format = :format, nombre_pages = :nombre_pages, descriptif = :descriptif, stock = :stock WHERE id = :id";
             $stmt = $connexion->prepare($sql);
             $stmt->bindParam(':image_url', $imageUrl);
         }
     } else {
         // Mise à jour sans nouvelle image
-        $sql = "UPDATE livres SET titre = :titre, auteur = :auteur, isbn = :isbn, prix = :prix, frais_port = :frais_port, date_publication = :date_publication, format = :format, nombre_pages = :nombre_pages, descriptif = :descriptif, stock = :stock WHERE id = :id";
+        $sql = "UPDATE livres SET titre = :titre, auteur = :auteur, isbn = :isbn, prix = :prix, poids = :poids, date_publication = :date_publication, format = :format, nombre_pages = :nombre_pages, descriptif = :descriptif, stock = :stock WHERE id = :id";
         $stmt = $connexion->prepare($sql);
     }
 
@@ -62,7 +89,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $stmt->bindParam(':auteur', $auteur);
     $stmt->bindParam(':isbn', $isbn);
     $stmt->bindParam(':prix', $prix);
-    $stmt->bindParam(':frais_port', $frais_port);
+    $stmt->bindParam(':poids', $poids);
     $stmt->bindParam(':date_publication', $date_publication);
     $stmt->bindParam(':format', $format);
     $stmt->bindParam(':nombre_pages', $nombre_pages);
@@ -79,6 +106,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         echo "Erreur lors de la modification du livre.";
     }
 }
+
+
 ?>
 
 <!DOCTYPE html>
@@ -124,7 +153,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         input[type="date"],
         textarea,
         input[type="file"] {
-            width: 100%;
+            width: 95%;
             padding: 10px;
             margin-top: 5px;
             margin-bottom: 15px;
@@ -186,23 +215,26 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <label for="titre">Titre :</label>
         <input type="text" name="titre" id="titre" value="<?= htmlspecialchars($livre['titre']) ?>" required>
 
-        <label for="auteur">Auteur :</label>
+        <label for="auteur">Autrice / Auteur :</label>
         <input type="text" name="auteur" id="auteur" value="<?= htmlspecialchars($livre['auteur']) ?>" required>
 
         <label for="isbn">ISBN :</label>
         <input type="text" name="isbn" id="isbn" value="<?= htmlspecialchars($livre['isbn']) ?>" required>
 
-        <label for="prix">Prix :</label>
+        <label for="prix">Prix en € :</label>
         <input type="text" name="prix" id="prix" value="<?= htmlspecialchars($livre['prix']) ?>" required>
 
-        <label for="frais_port">Frais de port :</label>
-        <input type="text" name="frais_port" id="frais_port" value="<?= htmlspecialchars($livre['frais_port']) ?>" required>
+        <label for="poids">Poids du livre en gramme:</label>
+        <input type="text" name="poids" id="poids" value="<?= htmlspecialchars($livre['poids']) ?>" required>
 
         <label for="date_publication">Date de publication :</label>
         <input type="date" name="date_publication" id="date_publication" value="<?= htmlspecialchars($livre['date_publication']) ?>" required>
 
-        <label for="format">Format :</label>
-        <input type="text" name="format" id="format" value="<?= htmlspecialchars($livre['format']) ?>" required>
+        <label for="largeur">Largeur (mm) :</label>
+        <input type="number" name="largeur" id="largeur" value= "<?= htmlspecialchars($largeur) ?>" require>
+
+        <label for="hauteur">Hauteur (mm) :</label>
+        <input type="number" name="hauteur" id="hauteur" value= "<?= htmlspecialchars($hauteur)?>" require>
 
         <label for="nombre_pages">Nombre de pages :</label>
         <input type="number" name="nombre_pages" id="nombre_pages" value="<?= htmlspecialchars($livre['nombre_pages']) ?>" required>

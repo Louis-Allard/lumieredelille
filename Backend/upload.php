@@ -15,8 +15,8 @@ try {
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['image'])) {
     $image = $_FILES['image'];
-    $imageName = time() . '_' . basename($image['name']); // Nom unique basé sur le timestamp
-    $targetDir = "images/";  // Répertoire pour stocker les images
+    $imageName = time() . '_' . basename($image['name']);
+    $targetDir = "images/";  
     $targetFile = $targetDir . $imageName;
 
     // Déplacer l'image dans le répertoire cible
@@ -25,17 +25,60 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['image'])) {
         $auteur = $_POST['auteur'];
         $isbn = $_POST['isbn'];
         $prix = $_POST['prix'];
-        $frais_port = $_POST['frais_port'];
-        $date_publication = $_POST['date_publication']; // Nouvelle colonne
-        $format = $_POST['format']; // Nouvelle colonne
-        $nombre_pages = $_POST['nombre_pages']; // Nouvelle colonne
-        $descriptif = $_POST['descriptif']; // Nouvelle colonne
-        $stock = isset($_POST['stock']) ? 1 : 0; // Nouvelle colonne, 1 pour vrai, 0 pour faux
-        $imageUrl = $targetFile;  // Chemin relatif vers l'image
+        $poids = $_POST['poids'];
+        $date_publication = $_POST['date_publication']; 
+
+        //Format du livre***************************************************************
+        $largeur = $_POST['largeur'];
+        $hauteur = $_POST['hauteur'];
+
+        // Valider que largeur et hauteur sont des nombres
+        if (!is_numeric($largeur) || !is_numeric($hauteur)) {
+            echo "Erreur : la largeur et la hauteur doivent être des nombres.";
+            exit();
+        }
+
+        // Formater le format sous forme "largeur x hauteur"
+        $format = $largeur . ' x ' . $hauteur;
+
+        //*****************************************************************************
+
+        $nombre_pages = $_POST['nombre_pages']; 
+        $descriptif = $_POST['descriptif'];
+        $stock = isset($_POST['stock']) ? 1 : 0;
+        $imageUrl = $targetFile; 
+
+        function validateISBN($isbn) {
+            // Enlever les tirets ou espaces éventuels
+            $isbn = str_replace(['-', ' '], '', $isbn);
+        
+            // Vérifier si c'est un ISBN-10 ou ISBN-13
+            if (preg_match('/^\d{10}$/', $isbn) || preg_match('/^\d{13}$/', $isbn)) {
+                return true;
+            }
+            return false;
+        }
+
+        
+        if (!validateISBN($isbn)) {
+            echo "Erreur : l'ISBN doit être valide (ISBN-10 ou ISBN-13).";
+            exit();
+        }
+
+        function validateFormat($format) {
+            // Vérifier le format (ex: 220 x 140)
+            return preg_match('/^\d{2,3} x \d{2,3}$/', $format);
+        }
+        
+        if (!validateFormat($format)) {
+            echo "Erreur : le format du livre doit être au format 'largeur x hauteur' (par exemple, '140 x 210').";
+            exit();
+        }
+       
 
         // Requête SQL pour insérer les détails du livre
-        $sql = "INSERT INTO livres (titre, auteur, isbn, prix, frais_port, image_url, date_publication, format, nombre_pages, descriptif, stock) 
-                VALUES (:titre, :auteur, :isbn, :prix, :frais_port, :image_url, :date_publication, :format, :nombre_pages, :descriptif, :stock)";
+        $sql = "INSERT INTO livres (titre, auteur, isbn, prix, poids, image_url, date_publication, format, nombre_pages, descriptif, stock) 
+                VALUES (:titre, :auteur, :isbn, :prix, :poids, :image_url, :date_publication, :format, :nombre_pages, :descriptif, :stock)";
         
         // Préparation de la requête
         $stmt = $connexion->prepare($sql);
@@ -45,7 +88,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['image'])) {
         $stmt->bindParam(':auteur', $auteur);
         $stmt->bindParam(':isbn', $isbn);
         $stmt->bindParam(':prix', $prix);
-        $stmt->bindParam(':frais_port', $frais_port);
+        $stmt->bindParam(':poids', $poids);
         $stmt->bindParam(':image_url', $imageUrl);
         $stmt->bindParam(':date_publication', $date_publication);
         $stmt->bindParam(':format', $format);
@@ -183,17 +226,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['image'])) {
     <label for="isbn">ISBN :</label>
     <input type="text" name="isbn" id="isbn" required>
 
-    <label for="prix">Prix :</label>
+    <label for="prix">Prix en € :</label>
     <input type="text" name="prix" id="prix" required>
 
-    <label for="frais_port">Frais de port :</label>
-    <input type="text" name="frais_port" id="frais_port" required>
+    <label for="poids">Poids du livre en gramme :</label>
+    <input type="text" name="poids" id="poids" required>
 
     <label for="date_publication">Date de publication :</label>
     <input type="date" name="date_publication" id="date_publication" required>
 
-    <label for="format">Format :</label>
-    <input type="text" name="format" id="format" required placeholder="ex: 140 x 210">
+    <label for="largeur">Largeur (mm) :</label>
+    <input type="number" name="largeur" id="largeur" required placeholder="ex: 140">
+
+    <label for="hauteur">Hauteur (mm) :</label>
+    <input type="number" name="hauteur" id="hauteur" required placeholder="ex: 210">
 
     <label for="nombre_pages">Nombre de pages :</label>
     <input type="number" name="nombre_pages" id="nombre_pages" required>
