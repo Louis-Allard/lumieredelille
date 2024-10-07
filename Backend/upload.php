@@ -7,7 +7,7 @@ try {
     $connexion = new PDO("mysql:host=$host;dbname=$dbname", $user, $password);
     // Définition des attributs de gestion d'erreurs
     $connexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $connectionMessage = "Connexion réussie !<br>"; 
+    $connectionMessage = ""; 
 } catch(PDOException $e) {
     $connectionMessage = "Erreur de connexion : " . $e->getMessage();
     exit();  // Arrête le script si la connexion échoue
@@ -26,7 +26,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['image'])) {
         $isbn = $_POST['isbn'];
         $prix = $_POST['prix'];
         $poids = $_POST['poids'];
-        $date_publication = $_POST['date_publication']; 
+        $date_publication = $_POST['date_publication'];
+
+        // Vérification si l'ISBN existe déjà dans la base de données
+        $sqlCheck = "SELECT COUNT(*) FROM livres WHERE isbn = :isbn";
+        $stmtCheck = $connexion->prepare($sqlCheck);
+        $stmtCheck->bindParam(':isbn', $isbn);
+        $stmtCheck->execute();
+        $isbnExists = $stmtCheck->fetchColumn();
+
+        if ($isbnExists > 0) {
+            // ISBN existe déjà, message d'erreur
+            echo "Erreur : un livre avec cet ISBN existe déjà.";
+            exit();
+        }
 
         //Format du livre***************************************************************
         $largeur = $_POST['largeur'];
@@ -98,7 +111,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['image'])) {
         
         // Exécution de la requête
         if ($stmt->execute()) {
-            echo "Livre ajouté avec succès.";
+            $uploadMessage = "Livre ajouté avec succès.";
         } else {
             echo "Erreur lors de l'insertion dans la base de données.";
         }
@@ -194,6 +207,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['image'])) {
             background-color: #0056b3;
         }
 
+        .success {
+    color: green;
+    font-weight: bold;
+}
+
+
         @media (max-width: 768px) {
             form {
                 padding: 15px;
@@ -211,8 +230,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['image'])) {
 
 <form method="post" enctype="multipart/form-data">
 
-    <div style="text-align:center; margin-bottom: 20px; font-weight: bold;">
-        <?php echo $connectionMessage; ?>
+    <div style="text-align:center; margin-bottom: 20px;" class="<?php echo !empty($uploadMessage) ? 'success' : ''; ?>">
+        <?php echo $uploadMessage; ?>
     </div>
 
     <h2>Ajouter un Livre</h2>
