@@ -1,0 +1,219 @@
+.filter-section{
+    font-family: 'Roboto', sans-serif;
+    color:#0E2B46;
+    margin-left: 74%;
+    width: 16.5rem;
+    height: 1.5rem;
+    border-radius: 25px;
+    background-color: #D9D9D9;
+    padding: 2px;
+    padding-left: 8px;
+    border: solid rgb(65, 64, 64) 1px;
+}
+
+.selectedCardLivre{
+    font-family: 'Roboto', sans-serif;
+    color:#0E2B46;
+    background-color: #D9D9D9;
+    border: none;
+}
+
+.author-filter {
+    position: absolute;
+    top: 50px; 
+    left: 50%;
+    margin-left: 36rem;
+    margin-top: -7.5rem;
+    border-radius: 15px;
+    border: solid rgb(65, 64, 64) 1px;
+    transform: translateX(-50%);
+    z-index: 10; 
+    background-color: #D9D9D9;
+    padding: 10px;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .author-filter select {
+    width: 100%;
+    padding: 5px;
+  }
+  
+.book_list {
+    padding: 20px;
+    width: 85%;
+    margin-left: 5%;
+  }
+  
+  .book_grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px;
+  }
+
+
+  .book_card {
+    display: flex; 
+    background: #EBEBEB; 
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    transition: transform 0.2s; /* Animation pour le survol */
+}
+
+.imageCardLivre {
+    width: 40%; 
+    height: auto;
+    margin-right: 10px;
+}
+
+.book_info {
+    flex: 1; /* Permet au texte de prendre le reste de l'espace */
+}
+
+.book_card:hover {
+    transform: scale(1.05);
+    //* Effet de zoom sur le survol
+}
+
+ 
+.book_card img {
+    max-width: 100%; /* Limiter la taille de l'image */
+    border-radius: 5px; /* Coins arrondis pour l'image */
+}
+
+.titreCardLivre{
+    font-family: 'Roboto', sans-serif;
+    color:#0E2B46;
+}
+
+.infoCardLivre {
+    font-family: 'Roboto', sans-serif;
+    color:#0E2B46;
+    font-size: 1rem;
+    margin: 5px 0;
+}
+
+.prixCardLivre{
+    font-family: 'Roboto', sans-serif;
+    color:#0E2B46;
+    font-size: 5rem;
+    width: 7rem;
+}
+
+
+.buttonCardLivre{
+    background-color: #6F5F96;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bolder;
+    border-radius: 25px;
+    padding: 10px 20px;
+    margin-top: 0.5rem;
+    margin-left: 6rem;
+    border: none;
+    cursor: pointer;
+}
+
+.buttonCardLivre:hover{
+    background-color: #a9a7ae;
+    color: #0E2B46;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3%;
+  margin-bottom: 3%;
+}
+
+.pagination button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.pagination button.active {
+  background-color: #0056b3;
+}
+
+.pagination button:hover {
+  background-color: #0056b3;
+}
+
+.pagination button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+    .filter-section {
+        margin-left: 10%;
+        width: 70%;
+        height: auto;
+    }
+    .imageCardLivre {
+        width: 40%; 
+        height: auto;
+        margin-right: 10px;
+    }
+
+    .book_list {
+        width: 80%;
+        margin-left: 3%;
+      }
+
+
+
+    .book_info{
+        height: 8rem;
+        border: solid red;
+    }
+    
+    .titreCardLivre{
+        font-family: 'Roboto', sans-serif;
+        color:#0E2B46;
+    }
+    
+    .infoCardLivre {
+        font-family: 'Roboto', sans-serif;
+        color:#0E2B46;
+        font-size: 0.8rem;
+        
+    }
+
+    .prixCardLivre{
+        font-family: 'Roboto', sans-serif;
+        color:#0E2B46;
+        font-size: 5rem;
+        width: 7rem;
+    }
+
+
+
+    
+    .author-filter {
+        margin-left: 0;
+        left: 10%;
+        top: 20px;
+        width: 80%;
+        padding: 10px;
+    }
+
+    .book_grid {
+        grid-template-columns: repeat(1, 1fr); 
+    }
+
+    .buttonCardLivre {
+        margin-left: 0;
+        width: 100%;
+        padding: 10px;
+    }
+}
+

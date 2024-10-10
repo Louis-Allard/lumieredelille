@@ -1,0 +1,63 @@
+/* Panier.scss */
+
+.panier {
+    display: flex;
+    align-items: center; 
+    margin-left: 45%;
+    margin-top: 7%;
+}
+
+.logoPanier {
+    width: 40px; 
+    height: auto; 
+    margin-right: 10px; 
+}
+
+.logoPanier:hover {
+    transform: scale(1.1);
+}
+
+.textPanier {
+    display: flex;
+    flex-direction: column;
+}
+
+.titrePanier {
+    font-size: 16px;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    color: #000;
+}
+
+.articlePanier {
+    font-size: 15px;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    color: #000;
+}
+
+@media (max-width: 768px) {
+
+    .panier {
+        display: flex;
+        align-items: center; 
+        margin-left: 0;
+    }
+
+    .logoPanier {
+        width: 1.5rem; 
+        height: auto; 
+    }
+    
+    .titrePanier {
+        font-size: 0.8rem;
+    }
+    
+    .articlePanier {
+        font-size: 0.83rem;
+    }
+    
+    
+    
+}

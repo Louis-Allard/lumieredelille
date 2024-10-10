@@ -1,0 +1,170 @@
+.titreAdresse{
+    // margin-top: 30px;
+    font-family: 'Roboto', sans-serif;
+    color:#0E2B46 ;
+    text-align: center;
+    font-size: 2.1rem;
+    font-weight: 510;
+    letter-spacing: 0.15rem;
+}
+
+.titreBoutonAdresse{
+    display: flex;
+    align-items: center; 
+    justify-content: space-between;
+    margin-left: 30%;
+    margin-right: 10%;
+}
+
+.titrePageAdresse{
+    color: white;
+    background-color: #0E2B46;
+    text-align: center;
+    width: 55%;
+    margin-left: 10%;
+    margin: 0 auto;
+    // margin-top: 4%;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+.ligneChampAdresse{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2%;
+    width: 100%;
+}
+
+.form-container2 {
+    margin: 50px auto;
+    width: 52.5%;
+    background-color: #f4f4f4;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    margin-top: -2.5rem;
+  }
+  
+  .checkBoxAdresse {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .buttonNextStepPayer {
+    background-color: #174180;
+    color: white;
+    border-radius: 25px;
+    padding: 0.5rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    width: 11rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+
+  .buttonNextStepPayer:disabled{
+    background-color: #cccccc; 
+    color: #949494; 
+    cursor: not-allowed;
+  }
+  
+  .buttonNextStepPayer:hover {
+    background-color: #0E2B46;
+  }
+
+  .buttonNextStepPayer:disabled:hover {
+    background-color: #cccccc; 
+    color: #949494; 
+  }
+
+
+@media (max-width: 768px) {
+
+    .titreAdresse{
+        // margin-top: 20px;
+        font-family: 'Roboto', sans-serif;
+        color:#0E2B46 ;
+        text-align: center;
+        font-size: 0.8rem;
+        font-weight: 510;
+        letter-spacing: 0.15rem;
+    }
+    
+    .titreBoutonAdresse{
+        margin-left: 5%;
+        margin-right: 10%;
+    }
+    
+    .titrePageAdresse{
+        color: white;
+        background-color: #0E2B46;
+        text-align: center;
+        width: 80%;
+        margin-left: 10%;
+        margin: 0 auto;
+        // margin-top: 4%;
+        font-family: 'Roboto', sans-serif;
+        font-size: 15px;
+    
+    }
+
+    .form-container2 {
+        margin: 50px auto;
+        width: 85%;
+        background-color: #f4f4f4;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        border-radius: 10px;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: -2.5rem;
+      }
+
+      
+      .buttonNextStepPayer {
+        background-color: #174180;
+        color: white;
+        border-radius: 25px;
+        padding: 0.5rem;
+        font-family: 'Roboto', sans-serif;
+        font-weight: bold;
+        width: 11rem;
+        font-size: 1.2rem;
+        margin-top: 1rem;
+        margin-left: 3.3rem;
+        width: 100%;
+        cursor: pointer;
+      }
+
+    
+      .buttonNextStepPayer:disabled{
+        background-color: #cccccc; 
+        color: #949494; 
+        cursor: not-allowed;
+      }
+      
+      .buttonNextStepPayer:hover {
+        background-color: #0E2B46;
+      }
+    
+      .buttonNextStepPayer:disabled:hover {
+        background-color: #cccccc; 
+        color: #949494; 
+      }
+    
+      .checkBoxAdresse {
+        flex-direction: row;
+        justify-content: flex-start;
+        gap: 10px; 
+    }
+    
+  
+    
+}

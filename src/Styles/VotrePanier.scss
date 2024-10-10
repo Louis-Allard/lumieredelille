@@ -1,0 +1,223 @@
+
+.etape {
+    margin-bottom: 20px;
+    font-family: 'Roboto', sans-serif;
+    color:#0E2B46 ;
+    font-size: 0.8rem;
+    margin-left: 9%;
+}
+
+.trait {
+    background: linear-gradient(to bottom, #f4f4f400 90%, #0E2B46 50%);
+    padding: 5px;
+}
+
+.trait:hover{
+    background: linear-gradient(to bottom, #ebe8e876 90%, #0E2B46 50%);
+}
+.panierEtape2{
+    padding: 5px;
+}
+
+.panierEtape2:hover{
+    background-color: rgba(128, 128, 128, 0.496);
+    color: white;
+}
+.panierEtape3{
+    padding: 5px;
+}
+
+.panierEtape3:hover{
+    background-color: rgba(128, 128, 128, 0.496);
+    color: white;
+}
+
+.panierEtape1{
+    padding: 5px;
+}
+
+.panierEtape1:hover{
+    background-color: rgba(128, 128, 128, 0.496);
+    color: white;
+}
+
+.titreVotrePanier{
+    margin-top: 20px;
+    font-family: 'Roboto', sans-serif;
+    color:#0E2B46 ;
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 510;
+    letter-spacing: 0.15rem;
+}
+
+.boutonAchatVotrePanier{
+    margin-top: 6px;
+    padding: 10px 20px;
+    background-color: #5a4c7a;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.boutonAchatVotrePanier:hover {
+    background-color: #3e3a5a;
+}
+
+.titreBoutonAchat{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 40%;
+    margin-right: 13.7%;
+}
+
+.linkAdresse{
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    color:#0E2B46 ;
+}
+
+.linkPanier{
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    color:#0E2B46 ;
+}
+
+.linkPaiement{
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    color:#0E2B46 ;
+}
+
+hr {
+    border: none;
+    height: 0.5rem;
+    background-color: #0E2B46;
+    margin-left: 12.5%; 
+    width: 75%;
+    margin-top: 10px;
+}
+
+.tableauPanier{
+    width: 35%;
+    margin-left: 51%;
+    border: solid #D9D9D9 4px;
+    border-radius: 15px;
+    background-color: #D9D9D9;
+    margin-bottom: 10%;
+}
+
+.tableauPanier tr{
+    background-color: rgb(255, 255, 255);
+    color: #0E2B46;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+}
+
+.tableauPanier td {
+    padding: 1%;
+}
+
+.totalDuPanier{
+    background-color: rgba(178, 216, 229, 0.53);
+    font-weight: bolder;
+}
+
+.paiementSecurise{
+    display: flex;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    color:#0E2B46 ;
+    margin-left: 51%;
+    width: 15rem;
+    margin-top: -10.5%;
+}
+
+.cadenas{
+    width: 1.2rem;
+    height: 1.2rem;
+}
+
+.buttonNextStep{
+    background-color: #174180;
+    color: white;
+    border-radius: 25px;
+    padding: 0.5%;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    width: 10rem;
+    font-size: 1.2rem;
+    margin-bottom: 4.5%;
+    margin-left: 76%;
+}
+
+.buttonNextStep:hover{
+    cursor: pointer;
+    background-color: #0E2B46;
+}
+
+@media (max-width: 768px) {
+    .etape {
+        font-size: 0.45rem;
+    }
+    
+    .trait {
+        padding: 2px;
+    }
+    
+    .titreVotrePanier{
+        margin-top: 0.6rem;
+        font-size: 1.2rem;
+        // border: solid red;
+        margin-left: 10%;
+    }
+    
+    .boutonAchatVotrePanier{
+        margin-top: -0.2rem;
+        padding: 0.5rem 0.5rem;
+        width: 7rem;
+        // border: solid rgb(13, 255, 0);
+        font-size: 9px;
+
+    }
+    
+    .titreBoutonAchat{
+        margin-left: 15%;
+        margin-top: -1rem;
+        width: 80%;
+        // border: solid rgb(81, 0, 255);
+
+    }
+
+    hr{
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .tableauPanier{
+        width: 90%;
+        margin-left: 5%;
+        margin-bottom: 10%;
+        margin-top: 1rem;
+    }
+    
+    .tableauPanier tr{
+        font-size: 15px;
+    }
+   
+    .cadenas{
+        width: 1rem;
+        height: 1rem;
+    }
+
+    .buttonNextStep{
+        margin-left: 53%;
+    }
+    
+    
+    
+}

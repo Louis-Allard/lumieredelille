@@ -1,0 +1,201 @@
+
+.titrePagePanier{
+    color: white;
+    background-color: #0E2B46;
+    font-family: 'Roboto', sans-serif;
+    width: 75%;
+    margin: 0 auto;
+    font-size: 20px;
+    display: flex;
+    height: 2rem;
+
+}
+
+.colonneImage{
+   width: 2.5rem;
+}
+
+.colonneDesign{
+    width: 15rem;
+    margin-left: 7rem;
+}
+
+.colonneQuantite{
+    margin-left: 8.5rem;
+}
+
+
+.colonneTotal{
+    margin-left: 15rem;
+}
+
+.tablePanier {
+    width: 85%;
+    border-collapse: collapse;
+    margin-left: 6%;
+}
+
+    
+    
+.cartesContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Espace entre les cartes */
+}
+    
+.cartePanierHorizontale {
+    background-color: #D9D9D9;
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    width: 70%;
+    margin-left: 14%;
+}
+
+.blocImageDescriptif{
+    display: flex;
+}
+
+.imageCartePanier {
+    width: 5.4rem;
+    height: auto;
+}
+  
+.infoCartePanier {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    flex: 1;
+}
+  
+.titreCartePanier {
+    font-size: 18px;
+    margin: 0;
+    font-weight: bold;
+}
+  
+.auteurCartePanier,
+.isbnCartePanier {
+    font-size: 14px;
+    color: #666;
+    margin-top: 1px;
+    margin-bottom: 0;
+  }
+.prixCartePanier {
+    font-size: 20px;
+    color: #666;
+}
+
+
+.quantitePortPrix{
+    display: flex;
+    align-items: center;
+    width: 60%;
+    color: #0E2B46;
+    font-family: 'Roboto', sans-serif;
+    margin-left: 5rem;
+    
+}
+
+  
+.fraisEtTotalContainer {
+    text-align: right;
+}
+
+  
+.totalCartePanier {
+    font-size: 25px;
+    font-weight: bolder;
+    width: 20rem;
+    padding-left: 4.5rem;
+}
+    
+.suppression{
+    width: 1.3rem;
+}
+
+.suppression:hover{
+    cursor: pointer;
+}
+
+.actionsContainer{
+    margin-right: 12rem;
+}
+.quantiteContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid grey;
+    background-color: white;
+    height: 30px;
+    width: 100px; 
+    border-radius: 5px;
+    margin-left: 8rem;
+}
+
+.symboleMoins, .symbolePlus {
+    width: 1rem;
+    height: 1rem;
+    cursor: pointer;
+}
+
+.quantiteDisplay {
+    width: 30px;
+    text-align: center;
+    font-size: 16px; 
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .titrePagePanier {
+        font-size: 0px;
+        width: 90%;
+    }
+
+    .cartePanierHorizontale {
+        flex-direction: column;
+        // align-items: center;
+        width: 80%;
+        margin-left: 5.8%;
+    }
+
+    .imageCartePanier{
+        width: 5rem;
+        margin-bottom: 8rem;
+    }
+
+    .quantitePortPrix{
+        margin-top: 0;
+        width: 5rem;
+        height: 3rem;
+        margin-right: 90%;
+        margin-top: -6rem;
+    }
+
+    .totalCartePanier{
+        margin-left: -5rem;
+    }
+
+    .infoCartePanier {
+        width: 12rem;
+        height: 10rem;
+    }
+
+    .quantiteContainer {
+        margin-left: 0;
+        width: 80px;
+    }
+
+    .totalCartePanier {
+        font-size: 20px;
+        padding-left: 0;
+    }
+}  
+
+ 
+    
+    
+

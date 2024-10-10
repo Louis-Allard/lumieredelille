@@ -1,0 +1,12 @@
+import React from "react";
+import "../Styles/Actualités.scss"
+
+const Actualités =()=>{
+    return(
+        <div className="content">
+            <h1>Actualités</h1>
+        </div>
+    )
+};
+
+export default Actualités;

@@ -1,0 +1,88 @@
+.sousTitre{
+    font-family: 'Roboto', sans-serif;
+    color:#0E2B46 ;
+    font-weight: bold;
+
+}
+
+.paragraphe{
+    font-family: 'Roboto', sans-serif;
+    color:#0E2B46 ;
+    font-weight: bold;
+
+}
+
+.textContact{
+    width: 90%;
+    margin: 0 auto;
+    }
+
+.textInfoContact{
+    width: 90%;
+    margin: 0 auto;
+    font-family: 'Roboto', sans-serif;
+    color:#0E2B46 ;
+    margin-left: -2%;
+    }
+    
+.textSousForm{
+    font-family: 'Roboto', sans-serif;
+    color:#0E2B46 ;
+    font-weight: bolder;
+    text-align: center;
+    margin-bottom: 10%;
+}
+
+.blocInfoContact{
+    width: 60%;
+    margin-bottom: 2%;
+    margin-left: 20%;
+
+}
+
+.spanContact{
+    font-weight: bold;
+}
+
+.contact{
+    font-family: 'Roboto', sans-serif;
+    color:#0E2B46 ;
+}
+
+@media (max-width: 768px) {
+    .textInfoContact{
+        width: 90%;
+        margin: 0 auto;
+        font-family: 'Roboto', sans-serif;
+        color:#0E2B46 ;
+        margin-left: -10%;
+        }
+        
+    
+    .blocInfoContact{
+        width: 60%;
+        margin-bottom: 5%;
+        margin-left: 8%;
+        margin-top: 5%;
+    }
+    
+    .spanContact{
+        font-weight: bold;
+    }
+    
+    .contact{
+        font-family: 'Roboto', sans-serif;
+        color:#0E2B46 ;
+    }
+
+    .textSousForm{
+        font-family: 'Roboto', sans-serif;
+        color:#0E2B46 ;
+        font-weight: bolder;
+        text-align: center;
+        margin-bottom: 15%;
+        margin-left: 40%;
+    }
+    
+    
+}

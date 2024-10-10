@@ -1,0 +1,242 @@
+.imageLivre{
+    height: 30rem;
+    width: 25rem;
+    margin-right: 5%;
+}
+
+.cardLivre{
+    display: flex;
+    margin-top: 5%;
+    margin-left: 10%;
+    
+}
+
+.textCardLivre, .auteurCardLivre {
+    font-family: 'Roboto', sans-serif;
+    color: #0E2B46 ;
+    margin-right: 30%;
+}
+
+.descriptCardLivre{
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    color: #0E2B46 ;
+    margin-right: 30%;
+    font-size: 1.2rem;
+
+}
+
+.titreCardLivre {
+    font-family: 'Roboto', sans-serif;
+    color: #0E2B46 ;
+    margin-top: 0;
+    font-size: 1.5rem;
+}
+
+.infoLivre{
+    margin-top: 0.2%;
+}
+
+.detailtechnicLivre{
+    margin-top: 5%;
+    line-height: 30%;
+}
+
+.prixCardLivre{
+    font-family: 'Roboto', sans-serif;
+    color: #0E2B46 ;
+    font-weight: bold;
+    font-size: 2rem;
+    display: flex;
+}
+
+.prixStockContainer {
+    align-items: center;
+    margin-top: 20px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.prixCardLivre {
+    font-family: 'Roboto', sans-serif;
+    color: #0E2B46;
+    font-weight: bold;
+    font-size: 2rem;
+    margin-right: 10px;
+}
+
+.prixStockContainer {
+    display: flex;
+    align-items: center;
+    justify-content:flex-start;
+}
+
+.stockStatus {
+    display: flex;
+    align-items: center;
+}
+
+.stockCircle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: rgb(27, 230, 27);
+    border: solid white 1px;
+    margin-right: 5px;
+}
+
+
+.stockCircle.red { 
+    background-color: red;
+}
+
+.enStockText {
+    font-family: 'Roboto', sans-serif;
+    color: #0E2B46;
+    font-weight: bold;
+}
+
+.outOfStockText {
+    font-family: 'Roboto', sans-serif;
+    color: #0E2B46;
+    font-weight: bold;
+}
+
+.buttonPanier {
+    display: flex;
+    align-items: center;
+    background-color: #6F5F96;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bolder;
+    border-radius: 25px;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    margin-left: 50%;
+    margin-top: 10%;
+}
+
+.buttonPanier img {
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+}
+
+.buttonPanier:hover {
+    background-color: #a9a7ae;
+    color: #0E2B46;
+}
+
+.buttonPanier.disabled {
+    background-color: grey; /* Couleur pour indiquer la rupture de stock */
+    cursor: not-allowed; /* Change le curseur pour indiquer que le bouton est désactivé */
+}
+
+
+@media (max-width: 768px) {
+    .cardLivre {
+        flex-direction: column;
+    }
+
+    .imageLivre {
+        width: 18.5rem;
+    }
+
+    .infoLivre {
+        width: 60%; 
+    }
+
+    .textCardLivre {
+        font-family: 'Roboto', sans-serif;
+        color: #0E2B46 ;
+        margin-right: 30%;
+        width: 18.5rem;
+        text-align: center;
+    }
+
+    .auteurCardLivre{
+        font-family: 'Roboto', sans-serif;
+        color: #0E2B46 ;
+        margin-right: 30%;
+        width: 18.5rem;
+        text-align: center;
+        margin-top: -5%;
+    
+    }
+    
+    .descriptCardLivre{
+        font-family: 'Roboto', sans-serif;
+        color: #0E2B46 ;
+        margin-right: 30%;
+        font-size: 1.2rem;
+        width: 18.5rem;
+        text-align: center;
+        margin-top: -5%;
+    }
+    
+    .titreCardLivre {
+        font-family: 'Roboto', sans-serif;
+        color: #0E2B46 ;
+        margin-top: 0;
+        font-size: 1.5rem;
+        margin-top: 5%;
+    }
+    
+    .infoLivre{
+        margin-top: 0.2%;
+        width: 18.5rem;
+        text-align: center;
+    }
+    
+    .detailtechnicLivre{
+        margin-top: 12%;
+        line-height: 30%;
+    }
+    
+    .prixCardLivre{
+        font-family: 'Roboto', sans-serif;
+        color: #0E2B46 ;
+        font-weight: bold;
+        font-size: 2rem;
+        display: flex;
+    }
+    
+    
+    .prixCardLivre {
+        font-family: 'Roboto', sans-serif;
+        color: #0E2B46;
+        font-weight: bold;
+        font-size: 2rem;
+        margin-right: 10px;
+    }
+    
+    .prixStockContainer {
+        display: flex;
+        align-items: center;
+        justify-content:flex-start;
+        padding-left: 15%;
+        margin-top: -8%;
+    }
+
+    .buttonPanier {
+        display: flex;
+        align-items: center;
+        background-color: #6F5F96;
+        color: white;
+        font-family: 'Roboto', sans-serif;
+        font-weight: bolder;
+        border-radius: 25px;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        margin-left: 20%;
+        margin-top: 5%;
+        margin-bottom: 5%;
+    }
+    
+     
+}
+
+
+
